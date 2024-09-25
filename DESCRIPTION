@@ -1,12 +1,11 @@
 Type: Package
 Package: pikchr
 Title: R Wrapper for 'pikchr' Language (<https://Pikchr.org>)
-Version: 0.96
+Version: 0.97
 Date: 2024-09-25
-Authors@R: person(given = "Andre",
-                  family = "Leite",
-                  role = c("aut", "cre"),
-                  email = "leite@castlab.org")
+Authors@R: c(
+            person("Andre", "Leite", email = "leite@castlab.org", role = c("aut", "cre")),
+            person("Hugo", "Vaconcelos", email = "hugo.vasconcelos@ufpe.br", role = "aut"))
 Description: An 'R' interface to 'pikchr' (pronounced “picture”), a 'PIC'-like markup language for creating diagrams within technical documentation. Originally developed by 'Brian Kernighan', 'PIC' has been adapted into 'pikchr' by 'D. Richard Hipp', the creator of 'SQLite'. 'pikchr' is designed to be embedded in fenced code blocks of Markdown or other documentation markup languages, making it ideal for generating diagrams in text-based formats. This package allows R users to seamlessly integrate the descriptive syntax of 'pikchr' for diagram creation directly within the 'R' environment.
 License: GPL (>= 2)
 Encoding: UTF-8

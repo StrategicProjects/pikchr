@@ -56,5 +56,4 @@ pikchr('
   arrow <-> down from last box.s
   box same "Pikchr" "(pikchr.c)" fit
   ')
-
 }

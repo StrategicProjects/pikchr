@@ -1,13 +1,3 @@
-#' @useDynLib pikchr
-#' @import htmltools
-#' @import utils
-#' @import stringr
-#' @import rsvg
-#' @importFrom stringr str_replace
-#' @importFrom htmltools HTML tags browsable
-NULL
-#> NULL
-
 #' Convert Pikchr Code to SVG
 #'
 #' This function converts a diagram description written in the Pikchr language into an SVG (Scalable Vector Graphics) format.
@@ -36,7 +26,13 @@ NULL
 #'   arrow <-> down from last box.s
 #'   box same "Pikchr" "(pikchr.c)" fit
 #'   ')
-#' 
+#' @useDynLib pikchr 
+#' @import htmltools
+#' @import utils
+#' @import stringr
+#' @import rsvg
+#' @importFrom stringr str_replace
+#' @importFrom htmltools HTML tags browsable
 #' @export 
 pikchr <- function(code, 
                    width = "75%", 
