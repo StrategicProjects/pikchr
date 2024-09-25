@@ -46,6 +46,7 @@ This function converts a diagram description written in the Pikchr language into
 Pikchr is a diagram language inspired by PIC, and this function allows you to easily embed Pikchr diagrams as SVG images in your HTML or Markdown documents.
 }
 \examples{
+if(interactive()) {
 pikchr('
   /*
     Commnents: \\\\ or #
@@ -56,4 +57,5 @@ pikchr('
   arrow <-> down from last box.s
   box same "Pikchr" "(pikchr.c)" fit
   ')
+  }
 }

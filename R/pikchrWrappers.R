@@ -16,6 +16,7 @@
 #'
 #' @return A character string containing the SVG diagram code if svgOnly = TRUE. Otherwise, the function opens the diagram in the Viewer window.
 #' @examples
+#' if(interactive()) {
 #' pikchr('
 #'   /*
 #'     Commnents: \\ or #
@@ -26,6 +27,7 @@
 #'   arrow <-> down from last box.s
 #'   box same "Pikchr" "(pikchr.c)" fit
 #'   ')
+#'   }
 #' @useDynLib pikchr 
 #' @import htmltools
 #' @import utils
