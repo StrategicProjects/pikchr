@@ -73,13 +73,32 @@ pikchr <- function(code,
     result <- paste0("<div class = \"container_", class, "\" style=\"text-align:", align, ';">', result, "</div>")
   }
   
-  if (fontFamily != 'inherit') {
+  #data("google_fonts", package =  "pikchr")
+  font_styles <- google_fonts %>% filter(family == fontFamily) %>% pull(styles)
+  if (length(font_styles) == 1L) {
     result <- stringr::str_replace(result, pattern = "(<svg.*?>)",
-                                   replacement = paste0("\\1", '<def><style type="text/css">@import url(https://fonts.googleapis.com/css2?family=', fontFamily,':ital,wght@0,100..900;1,100..900);</style></def>'))
+                                   replacement = paste0("\\1", '<def><style type="text/css">@import url(https://fonts.googleapis.com/css2?family=', fontFamily, font_styles, ');</style></def>'))
+  } else {
+    if (fontFamily != "inherit") message("Google font not founded, check the spelling. Using inherit.")
   }
-  
+
   if (!svgOnly) {
     return(htmltools::browsable(htmltools::tags$html(htmltools::HTML(result))))
   } else
     return(htmltools::HTML(result))
 }
+
+
+#' Google Font List
+#'
+#' List of fonts and its stytles on google fonts site.
+#' Report ...
+#'
+#' @format ## `google_fonts`
+#' A data frame with 1,718 rows and 2 columns:
+#' \describe{
+#'   \item{family}{Font family names}
+#'   \item{styles}{Font styles}
+#' }
+#' @source <https://fonts.google.com>
+"google_fonts"

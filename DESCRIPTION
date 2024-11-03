@@ -24,3 +24,6 @@ Imports:
 URL: <https://github.com/StrategicProjects/pikchr>
 Note:
     This package makes use of the 'pikchr' source code created by Richard Hipp (<https://pikchr.org>). 
+Depends: 
+    R (>= 2.10)
+LazyData: true
