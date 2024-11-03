@@ -26,17 +26,6 @@
 #' - `lang`: Language for the Pikchr diagram (optional).
 #'
 #' @return This function returns an SVG (or PNG for LaTeX output) rendered by Pikchr.
-#'
-#' @examples
-#' \dontrun{
-#' # In an R Markdown chunk
-#' ```{pikchr}
-#' box "Hello, Pikchr!" 
-#' arrow
-#' circle
-#' ```
-#' }
-#'
 #' @seealso [knitr::knit_engines]
 #' 
 #' @import htmltools
@@ -46,10 +35,10 @@
 #' @import knitr
 #' @importFrom rsvg rsvg_png
 #' @importFrom purrr map_lgl
-#' @export
+#' @keywords internal
 eng_pikchr = function(options) {
   options <- eng_pikchr_validate_options(options)
-  if (!options$eval) return(engine_output(options, options$code, ''))
+  if (!options$eval) return(knitr::engine_output(options, options$code, ''))
   echo <- options$echo
   width <- options$width
   height <- options$height
@@ -72,18 +61,14 @@ eng_pikchr = function(options) {
   )
   
   
-  if(!dir.exists("tmp")) dir.create("tmp")
-  
-  fig  <- tempfile(tmpdir =  "tmp", fileext = ".svg", pattern = "pik_tmp_")
-  write_lines(piksvg, fig)
+  fig <- tempfile(fileext = ".svg")
+  brio::write_lines(piksvg, fig)
   
   if (knitr::is_latex_output() & (!knitr::is_html_output())) {
-    png  <- tempfile(tmpdir = "tmp", fileext = ".png", pattern = "pik_tmp_")
+    png  <- tempfile(fileext = ".png")
     rsvg::rsvg_png(svg = fig, file = png)
     fig <- png
   }
-  
-  
   
   options$fig.num = 1L; options$fig.cur = 1L
   extra = run_hook_plot(fig, options)
@@ -105,18 +90,6 @@ eng_pikchr = function(options) {
 #'
 #' @return The validated options list, where unsupported numeric values are converted to `TRUE`.
 #'
-#' @examples
-#' \dontrun{
-#' # Create a sample list of chunk options
-#' options <- list(eval = 1, echo = 0, warning = 2)
-#'
-#' # Validate options
-#' validated_options <- eng_pikchr_validate_options(options)
-#'
-#' # Print the validated options
-#' print(validated_options)
-#' }
-#' 
 #' @keywords internal
 eng_pikchr_validate_options <- function(options) {
   
@@ -149,17 +122,6 @@ eng_pikchr_validate_options <- function(options) {
 #' This function is particularly useful for handling plots generated from both R code and other outputs like HTML widgets.
 #'
 #' @return The result of calling the current Knitr plot hook with the specified plot file and options.
-#'
-#' @examples
-#' \dontrun{
-#' # Example usage within a Knitr chunk engine
-#' plot_file <- "path/to/plot.svg"
-#' chunk_options <- list(fig.width = 7, fig.height = 5)
-#'
-#' # Record the plot and run the plot hook
-#' run_hook_plot(plot_file, chunk_options)
-#' }
-#' 
 #' @keywords internal
 run_hook_plot = function(x, options) {
   opts_knit$append(plot_files = x)

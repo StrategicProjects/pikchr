@@ -38,17 +38,7 @@ If the output is LaTeX, the SVG is converted to PNG using the `rsvg_png()` funct
 - `lang`: Language for the Pikchr diagram (optional).
 }
 
-\examples{
-\dontrun{
-# In an R Markdown chunk
-```{pikchr}
-box "Hello, Pikchr!" 
-arrow
-circle
-```
-}
-
-}
 \seealso{
 [knitr::knit_engines]
 }
+\keyword{internal}

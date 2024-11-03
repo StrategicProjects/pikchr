@@ -23,15 +23,4 @@ The `run_hook_plot` function appends the plot file path to the internal Knitr op
 It then retrieves the current plot hook defined in `knit_hooks` and calls it to handle the plot rendering or output. 
 This function is particularly useful for handling plots generated from both R code and other outputs like HTML widgets.
 }
-\examples{
-\dontrun{
-# Example usage within a Knitr chunk engine
-plot_file <- "path/to/plot.svg"
-chunk_options <- list(fig.width = 7, fig.height = 5)
-
-# Record the plot and run the plot hook
-run_hook_plot(plot_file, chunk_options)
-}
-
-}
 \keyword{internal}

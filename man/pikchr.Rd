@@ -9,7 +9,7 @@ pikchr(
   width = "75\%",
   height = "auto",
   fontSize = "80\%",
-  fontFamily = "Arial",
+  fontFamily = "inherit",
   class = "pikchr",
   align = "none",
   css = NULL,
@@ -48,10 +48,7 @@ Pikchr is a diagram language inspired by PIC, and this function allows you to ea
 \examples{
 if(interactive()) {
 pikchr('
-  /*
-    Commnents: \\\\ or #
-  */
-   arrow right 200\% "Rmarkdown" "Source"
+  arrow right 200\% "Rmarkdown" "Source"
   box rad 10px "Rmarkdown" "(knitr)" fit
   arrow right 200\% "HTML+SVG" "Output"
   arrow <-> down from last box.s

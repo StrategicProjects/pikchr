@@ -18,10 +18,7 @@
 #' @examples
 #' if(interactive()) {
 #' pikchr('
-#'   /*
-#'     Commnents: \\ or #
-#'   */
-#'    arrow right 200% "Rmarkdown" "Source"
+#'   arrow right 200% "Rmarkdown" "Source"
 #'   box rad 10px "Rmarkdown" "(knitr)" fit
 #'   arrow right 200% "HTML+SVG" "Output"
 #'   arrow <-> down from last box.s
@@ -40,14 +37,16 @@ pikchr <- function(code,
                    width = "75%", 
                    height = "auto", 
                    fontSize = "80%",
-                   fontFamily = 'Arial',
+                   fontFamily = 'inherit',
                    class = "pikchr",
                    align = "none",
                    css = NULL,
                    margin = NULL,
                    svgOnly = FALSE) {
   
-  result <- .Call("pikchr_c", code, class)
+  code_clean <- stringr::str_replace_all(code, "\\\\*\\s*\\n\\s*then", " then")
+  
+  result <- .Call("pikchr_c", code_clean, class)
   
   if (is.null(margin)) {
     margin = "10px 0 10px 0"
@@ -72,6 +71,11 @@ pikchr <- function(code,
   
   if (align != "none"){
     result <- paste0("<div class = \"container_", class, "\" style=\"text-align:", align, ';">', result, "</div>")
+  }
+  
+  if (fontFamily != 'inherit') {
+    result <- stringr::str_replace(result, pattern = "(<svg.*?>)",
+                                   replacement = paste0("\\1", '<def><style type="text/css">@import url(https://fonts.googleapis.com/css2?family=', fontFamily,':ital,wght@0,100..900;1,100..900);</style></def>'))
   }
   
   if (!svgOnly) {

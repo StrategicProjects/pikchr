@@ -20,17 +20,4 @@ A warning is issued if any unsupported numeric options are detected.
 \details{
 The `eng_pikchr_validate_options` function looks for specific options (e.g., `eval`, `echo`, `warning`) that should not be numeric. If any of these options are numeric, they are converted to logical `TRUE` and a warning is issued to the user.
 }
-\examples{
-\dontrun{
-# Create a sample list of chunk options
-options <- list(eval = 1, echo = 0, warning = 2)
-
-# Validate options
-validated_options <- eng_pikchr_validate_options(options)
-
-# Print the validated options
-print(validated_options)
-}
-
-}
 \keyword{internal}
