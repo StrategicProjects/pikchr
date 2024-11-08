@@ -1,46 +1,34 @@
 url: https://strategicprojects.github.io/pikchr/
 template:
-  light-switch: true
-  trailing_slash_redirect: true
+  light-switch: yes
+  trailing_slash_redirect: yes
   package: tidytemplate
   bootstrap: 5
-  bslib:
-
-    #base_font: {google: "Roboto"}
-    #heading_font: {google: "Roboto Slab"}
-    #code_font: {google: "JetBrains Mono"}
-#    primary: '#096B72'
-#    navbar-background: '#e6f3fc'
-
-  # custom footer for rmarkdown ecosystem
+  bslib: ~
 figures:
   fig.ext: svg
-
 navbar:
   structure:
-    right: [search, github, lightswitch]
+    right:
+    - search
+    - github
+    - lightswitch
   components:
     github:
       icon: fa-github
       href: https://github.com/StrategicProjects/pikchr
       aria-label: Github
-# navbar:
-#   structure:
-#     left:  [intro, reference]
-#     right: [search, github, lightswitch]
-
 footer:
   structure:
-    left: [rmd]
-    right: [developed_by]
+    left: rmd
+    right: developed_by
   components:
-      #p: "\n\n"
-      rmd: |
-        **pikchr** is part of an ecosystem of R packages for data analysis and
-        computational document processing, developed by the [Secretaria Executiva
-        de Monitoramento Estratégico](https://monitoramento.sepe.pe.gov.br),
-        a division of the Secretaria de Projetos Estratégicos in the Government
-        of Pernambuco, Brazil.
-
+    rmd: |
+      **pikchr** is part of an ecosystem of R packages for data analysis and
+      computational document processing<br>developed by the [Secretaria Executiva
+      de Monitoramento Estratégico](https://monitoramento.sepe.pe.gov.br).
+    developed_by: |
+      Developed by André Leite and Hugo Medeiros
 development:
   mode: auto
+
