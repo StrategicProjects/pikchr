@@ -8,7 +8,7 @@
 #'
 #' @details
 #' The `eng_pikchr` function allows you to use Pikchr code inside R Markdown documents, rendering it as an image.
-#' It supports options like `width`, `height`, `font size`, `font family`, and CSS classes to customize the output.
+#' It supports options like `width`, `height`, font `size`, font `family`, and CSS classes to customize the output.
 #' The function automatically detects the output format (HTML or LaTeX) and generates the appropriate image.
 #' 
 #' If the output is LaTeX, the SVG is converted to PNG using the `rsvg_png()` function.
@@ -20,6 +20,7 @@
 #' - `height`: Height of the rendered image (default `"auto"`).
 #' - `size`: Font size for the Pikchr diagram (default `"100%"`).
 #' - `family`: Font family for the Pikchr diagram (default `"inherit"`).
+#' - `align`: Figure align: left, right, center.
 #' - `css`: Additional CSS for customizing the Pikchr diagram.
 #' - `class`: CSS class to apply to the diagram (default `"pikchr"`).
 #' - `margin`: CSS margin around the image (default `"10px 0 10px 0"`).
@@ -42,18 +43,20 @@ eng_pikchr = function(options) {
   echo <- options$echo
   width <- options$width
   height <- options$height
-  size <- options$size
+  size <- options$fontSize
   family <- options$fontFamily
+  align <- options$align
   css <- options$css
   class <- paste("inline-svg", options$class, options$label)
   margin <- options$margin
   lang <- options$lang
   code <- paste0(options$code, collapse = " \n")
   piksvg <- pikchr(code, 
-                   width = ifelse(is.null(width), "80%", width),
-                   height = ifelse(is.null(height), "auto", height),
-                   fontSize = ifelse(is.null(size) | (size == "normalsize"), "80%", size),
+                   width = width,
+                   height = height,
+                   fontSize = ifelse(is.null(size) | (size == "normalsize"), "100%", size),
                    fontFamily = ifelse(is.null(family), "inherit", family),
+                   align = ifelse(is.null(align), "center", align),
                    class = ifelse(is.null(class), "pikchr", paste("pikchr", class)),
                    css = css, #ifelse(is.null(css), "", css),
                    margin = ifelse(is.null(margin), "10px 0 10px 0", margin),

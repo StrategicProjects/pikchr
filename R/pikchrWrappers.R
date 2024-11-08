@@ -35,9 +35,9 @@
 #' @importFrom htmltools HTML tags browsable
 #' @export 
 pikchr <- function(code, 
-                   width = "75%", 
-                   height = "auto", 
-                   fontSize = "80%",
+                   width = NULL, 
+                   height = NULL, 
+                   fontSize = "100%",
                    fontFamily = 'Jost',
                    class = "pikchr",
                    align = "none",
@@ -52,6 +52,14 @@ pikchr <- function(code,
   if (is.null(margin)) {
     margin = "10px 0 10px 0"
   }
+  
+  viewbox <- stringr::str_extract(result, "(?<=(viewBox=\")).*(?=(\">))")
+  bbox <- as.numeric(stringr::str_split(viewbox, "\\s", simplify = TRUE))
+  bbox_height <- bbox[4] - bbox[2]
+  bbox_width <-  bbox[3] - bbox[1]
+  
+  if (is.null(width)) width <- bbox_width
+  if (is.null(width)) width <- bbox_height
   
   styles  = paste0("style='width:", width, 
                    ";height:", height, 

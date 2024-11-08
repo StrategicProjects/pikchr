@@ -38,7 +38,7 @@ You can install directly from CRAN or the development version of pikchr from [Gi
 pak::pak("StrategicProjects/pikchr")
 ```
 
-```{r}
+```{r, echo=TRUE, eval=FALSE}
 library(pikchr)
 
 pikchr('
@@ -51,27 +51,68 @@ arrow right 200% "HTML+SVG" "Output"
 arrow <-> down from last box.s
 box same "Pikchr" "(pikchr.c)" bold fit
 ',
-width = "100%",
+width = "75%", 
 height = "auto",
-align = "center", 
-fontFamily = "Flamenco", svgOnly = TRUE)
+fontSize = '75%',
+fontFamily = "Flamenco")
+```
+
+```{r, echo=FALSE, fig.align='center'}
+library(pikchr)
+
+pikchr('
+/*
+basic example code
+*/
+arrow right 200% "Rmarkdown" "Source" # teste
+box rad 10px "Rmarkdown" "(knitr)" bold  fit
+arrow right 200% "HTML+SVG" "Output" 
+arrow <-> down from last box.s
+box same "Pikchr" "(pikchr.c)" bold fit
+',
+width = "75%",
+height = "auto",
+fontSize = "75%",
+fontFamily = "Flamenco", 
+svgOnly = TRUE)
 ```
 
 
 You can also use the `{pikchr}` engine in a `Rmarkdown` document.
 
+````{verbatim}
 ```{pikchr}
-#| width: 100%
+#| width: 50%
 #| height: auto
-#| fig.align: center
+#| align: center
+#| fontSize: 14
 #| fontFamily: Jost
 /*
 basic example code in a markdown chunk.
 */
-arrow right 200% "Rmarkdown" "Source" 
-box rad 10px "Rmarkdown" "(knitr)" bold  fit
+arrow right 200% "Rmarkdown" "Source" # teste
+box rad 10px "Rmarkdown" "(knitr)"  fit fill 0xEE964B
 arrow right 200% "HTML+SVG" "Output" 
 arrow <-> down from last box.s
-box same "Pikchr" "(pikchr.c)" bold fit
+box same "Pikchr" "(pikchr.c)" fit fill 0xF4D35E
+```
+````
+
+
+```{pikchr}
+#| echo: false
+#| width: 50%
+#| height: auto
+#| align: center
+#| fontSize: 14
+#| fontFamily: Jost
+/*
+basic example code in a markdown chunk.
+*/
+arrow right 200% "Rmarkdown" "Source" # teste
+box rad 10px "Rmarkdown" "(knitr)"  fit fill 0xEE964B
+arrow right 200% "HTML+SVG" "Output" 
+arrow <-> down from last box.s
+box same "Pikchr" "(pikchr.c)" fit fill 0xF4D35E
 ```
 
