@@ -1,26 +1,21 @@
 ---
-title: "Pikchr Diagram Examples"
-author: "André Leite"
-date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{Pikchr Diagram Examples}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+title: "Examples"
 ---
 
-```{r setup, include = FALSE}
+```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+```
+
+```{r setup}
 library(pikchr)
 ```
 
 
 > **Disclaimer**
 > Some of the examples below are derived from the [Pikchr](https://pikchr.org) project.
-
 
 
 
@@ -47,16 +42,20 @@ library(pikchr)
 
 ### Example 2
 
-```{pikchr}  
+```{pikchr, size = '100%'}  
 /*
  Example 2. André Leite (leite@castlab.org)
  */
 dimen_= .75
 Origem:(0,0) 
 B1:box "Agente" "Externo";
-L1:line -> from B1.s down dimen_/4 then left 1.5*dimen_ then down dimen_/4; 
+L1:line -> from B1.s down dimen_/4 \
+  then left 1.5*dimen_ \
+  then down dimen_/4; 
 B2:box wid 1 "Sensores" "Digitais";
-L2:line -> from B1.s down dimen_/4 then right 1.5*dimen_ then down dimen_/4;
+L2:line -> from B1.s down dimen_/4 \
+  then right 1.5*dimen_ \
+  then down dimen_/4;
 B3:box wid 1 "Sensores" "Analógicos";
 L3:line -> from B2.s down dimen_/2;
 B4:box wid 1 "Transmissor" "FSK";
@@ -67,15 +66,20 @@ B6:box wid 1 "Receptor" "FSK";
 L6:line -> from B5.s down dimen_/2; 
 B7:box wid 1 "Receptor" "FM";
 L7:line -> from B6.s down .5*dimen_ then right 4.5*dimen_ \  
-    then up 3*dimen_ then right .5*dimen_ 
+  then up 3*dimen_ \
+  then right .5*dimen_ 
 L8:line -> from B7.s down .25*dimen_ then right 1.25*dimen_ \  
-    then up 3*dimen_  then right .75*dimen_
-B8:box wid 1 "Rede" big "Neural" big with .w at 1/2<L7.end, L8.end> fill lightblue
+  then up 3*dimen_ \
+  then right .75*dimen_
+B8:box wid 1 "Rede" big "Neural" big \
+  with .w at 1/2<L7.end, L8.end> fill lightblue
 L9:line -> from B8.e right dimen_;
 B9:box wid 1 "Sistema de" "Controle" "de Acesso";
-L10:line -> from B8.e+(0,boxht/6) right dimen_/2 then up dimen_ then right dimen_/2; 
+L10:line -> from B8.e+(0,boxht/6) right dimen_/2 \ 
+  then up dimen_ then right dimen_/2; 
 B10:box wid 1 "Sistema de" "Alarme";
-L11:line -> from B8.e-(0,boxht/6) right dimen_/2 then down dimen_ then right dimen_/2; 
+L11:line -> from B8.e-(0,boxht/6) right dimen_/2 \ 
+  then down dimen_ then right dimen_/2; 
 B11:box wid 1 "Sistema de" "Anúncio";         
 ```  
       
@@ -91,11 +95,15 @@ B11:box wid 1 "Sistema de" "Anúncio";
           B1E: box rad 5px wid 2*$len fill white;
     LineCusto: line <- from B1E.n - ((2/3)*$len,0) up .25*$len;
      BoxCusto: box rad 5px "Custo" wid .5*$len ht .25*$len fill 0xFFD320;
-LineDistancia: line <- thick from BoxCusto.w + (0,.25*$len/6) left .25*$len/2 \  
-                    then up .25*$len/6 then left .15*$len/2;
+LineDistancia: line <- thick from BoxCusto.w + (0,.25*$len/6) \
+                    left .25*$len/2 \  
+                    then up .25*$len/6 \
+                    then left .15*$len/2;
                box rad 10px "Distância" fit wid .35*$len fill 0xFFD320;
-    LineTempo: line <- thick  from BoxCusto.w - (0,.25*$len/6) left .25*$len/2 \  
-                    then down .25*$len/6  then left .15*$len/2 color gray;
+    LineTempo: line <- thick  from BoxCusto.w - (0,.25*$len/6) \
+                    left .25*$len/2 \  
+                    then down .25*$len/6  then left .15*$len/2 \
+                    color gray;
                box rad 10px "Tempo" fit wid .35*$len fill 0xFFD320;
                text "Primeiro Estágio" bold at B1E.c  color black;
    LineNumMat: line <- from B1E.n - ((0)*$len,0) up .25*$len;
@@ -105,17 +113,22 @@ LineDistancia: line <- thick from BoxCusto.w + (0,.25*$len/6) left .25*$len/2 \
                text "Número de Novas" "Maternidades" at NM.c color white;
                text "Nascimentos" "de risco" at NR.c color white;
 /*Second Stage */
-          B2E: box rad 5px with .n at B1E.s - (0, (.6)*$len) wid 2*$len fill white;
+          B2E: box rad 5px with .n at B1E.s - (0, (.6)*$len) \
+               wid 2*$len fill white;
     LineOfeta: line <- from B2E.n up .2*$len;
-           OF: box rad 10px "Nascimentos" "no município" fit wid .5*$len fill 0xFF420E;
+           OF: box rad 10px "Nascimentos" "no município" fit \
+               wid .5*$len fill 0xFF420E;
   LineDemanda: line <- from B2E.n - ((2/3)*$len,0) up .2*$len;
-           DM: box rad 10px "Nascimentos" "de residentes" fit wid .5*$len fill 0x83CAFF;
-LineResultado: line -> "Polos" aligned above italic from B2E.e right .35*$len;
+           DM: box rad 10px "Nascimentos" "de residentes" \
+               fit wid .5*$len fill 0x83CAFF;
+LineResultado: line -> "Polos" aligned above italic from B2E.e \
+               right .35*$len;
            RS: file "Resultado" bold ht .25*$len wid .5*$len fill 0x579D1C;
    LineSegEst: line -> "Macropolos" above italic aligned from B1E.s + \
                       ((2/3)*$len,0) down .6*$len; 
                text "Segundo Estágio" bold at B2E.c color black;
-           BX: box thin dashed with .c at 1/2<OF.c,DM.c> wid 1.35*$len ht OF.height + .2;
+           BX: box thin dashed with .c at 1/2<OF.c,DM.c> \
+               wid 1.35*$len ht OF.height + .2;
                text "Município" above at BX.n;
 /* Fim */          
 ```
@@ -541,16 +554,19 @@ B9: box "Referral" "to UBS" fit rad .1  wid .5*$width
 L12: line from L10.end + (0, .25) left 1.25 then down .25 ->
 X2: diamond wid .25 ht .25 fill 0x74c476
 L11: line down .125 -> 
-B10: box "Medical Assistance" "within 120 minutes" bold fit rad .1 wid .5*$width
+B10: box "Medical Assistance" "within 120 minutes" bold fit \
+     rad .1 wid .5*$width
 L13: line from L12.nw left 1.25 then down .25 ->
 X3: diamond wid .25 ht .25 fill 0xfaff00
 L12: line down .125 -> 
-B11: box "Medical Assistance" "within 60 minutes" bold fit rad .1  wid .5*$width
+B11: box "Medical Assistance" "within 60 minutes" bold fit \
+     rad .1  wid .5*$width
 L14: line from L13.nw left 1.25 then down .25 ->
 X3: diamond wid .25 ht .25 fill 0xf16913
 L14: line down .125 -> 
-B12: box "Medical Assistance" "within 10 minutes" bold fit rad .1  wid .5*$width 
-        "Emergency?" small at X.s - (0, .075)
+B12: box "Medical Assistance" "within 10 minutes" bold fit \
+     rad .1  wid .5*$width 
+     "Emergency?" small at X.s - (0, .075)
 ```
 
 ### Example 13
@@ -671,7 +687,9 @@ A1: box "secretaria" italic fit fill 0xD7BDE2
 arrow from A0 right 9*$r behind A1
 A2: box "dias" italic fit fill lightyellow
 
-arrow from A1.e right $r*0.5 then up $r*1.8 right $r*1.2 then right until even with A2.w
+arrow from A1.e right $r*0.5 \
+  then up $r*1.8 right $r*1.2 \
+  then right until even with A2.w
 A3: box "inicio" italic fit fill lightyellow
 arrow $r
 A4: box "fim" italic fit fill lightyellow
@@ -812,7 +830,8 @@ CMD1: [
          arrow from A0 right 9*$r behind A1
          A2: box "dias" italic fit fill lightyellow
          
-         arrow from A1.e right $r*0.5 then up $r*1.8 right $r*1.2 then right until even with A2.w
+         arrow from A1.e right $r*0.5 then up $r*1.8 right $r*1.2 \
+         then right until even with A2.w
          A3: box "inicio" italic fit fill lightyellow
          arrow $r
          A4: box "fim" italic fit fill lightyellow

@@ -14,6 +14,7 @@ Encoding: UTF-8
 RoxygenNote: 7.3.2
 VignetteBuilder: knitr
 Imports: 
+    dplyr,
     knitr,
     brio,
     htmltools,
@@ -21,9 +22,10 @@ Imports:
     purrr,
     stringr,
     rsvg
-URL: <https://github.com/StrategicProjects/pikchr>
+URL: <https://github.com/StrategicProjects/pikchr>, https://strategicprojects.github.io/pikchr/
 Note:
     This package makes use of the 'pikchr' source code created by Richard Hipp (<https://pikchr.org>). 
 Depends: 
     R (>= 2.10)
 LazyData: true
+Config/Needs/website: tidyverse/tidytemplate, rmarkdown

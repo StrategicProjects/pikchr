@@ -2,3 +2,9 @@
 ^\.Rproj\.user$
 ^CRAN-SUBMISSION$
 ^cran-comments\.md$
+^README\.Rmd$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$
+^vignettes/articles$

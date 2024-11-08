@@ -43,16 +43,16 @@ eng_pikchr = function(options) {
   width <- options$width
   height <- options$height
   size <- options$size
-  family <- options$family
+  family <- options$fontFamily
   css <- options$css
-  class <- paste(options$class, options$label)
+  class <- paste("inline-svg", options$class, options$label)
   margin <- options$margin
   lang <- options$lang
   code <- paste0(options$code, collapse = " \n")
   piksvg <- pikchr(code, 
                    width = ifelse(is.null(width), "80%", width),
                    height = ifelse(is.null(height), "auto", height),
-                   fontSize = ifelse(is.null(size) | (size == "normalsize"), "100%", size),
+                   fontSize = ifelse(is.null(size) | (size == "normalsize"), "80%", size),
                    fontFamily = ifelse(is.null(family), "inherit", family),
                    class = ifelse(is.null(class), "pikchr", paste("pikchr", class)),
                    css = css, #ifelse(is.null(css), "", css),
@@ -64,16 +64,23 @@ eng_pikchr = function(options) {
   fig <- tempfile(fileext = ".svg")
   brio::write_lines(piksvg, fig)
   
+  options$fig.num = 1L; 
+  options$fig.cur = 1L
+  options$engine <- 'r'
+  
   if (knitr::is_latex_output() & (!knitr::is_html_output())) {
     png  <- tempfile(fileext = ".png")
     rsvg::rsvg_png(svg = fig, file = png)
-    fig <- png
+    piksvg <- run_hook_plot(png, options)
   }
   
-  options$fig.num = 1L; options$fig.cur = 1L
-  extra = run_hook_plot(fig, options)
-  options$engine <- 'c'
-  knitr::engine_output(options, options$code, '', extra)
+  if (echo) 
+    code <- options$code
+  else
+    code <- ''
+  
+  #extra = run_hook_plot(fig, options)
+  knitr::engine_output(options, code, '', piksvg)
 }
 
 
@@ -128,3 +135,9 @@ run_hook_plot = function(x, options) {
   hook = knit_hooks$get('plot')
   hook(x, options)
 }
+
+
+# set engines for interpreted languages
+local({
+   knit_engines$set(setNames(list(eng_pikchr), 'pikchr'))
+})

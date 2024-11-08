@@ -1,0 +1,77 @@
+---
+title: "README"
+output:
+   html_document:
+    keep_md: yes
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# pikchr
+
+<!-- badges: start -->
+![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/pikchr) &nbsp; 
+![CRAN Downloads](https://cranlogs.r-pkg.org/badges/grand-total/pikchr) &nbsp; 
+![](https://img.shields.io/badge/devel%20version-0.98-blue.svg)
+<!-- badges: end -->
+
+
+Welcome to the `pikchr` package website, an R interface for the **PIC diagramming language**, powered by the parser from <https://pikchr.org>. The `pikchr` package allows you to create diagrams directly within R, combining simplicity and precision for efficient diagram generation.
+
+With `pikchr`, you can produce complex diagrams for documentation, presentations, articles, and more, all from your R environment. The straightforward nature of the **PIC language**, paired with the power of R, makes this package a valuable tool for those needing precise, customizable visualizations in academic, technical, and scientific projects. Discover how `pikchr` can enhance and streamline your diagramming workflow!
+
+## Installation
+
+You can install directly from CRAN or the development version of pikchr from [GitHub](https://github.com/) with:
+
+```r
+# install.packages("pak")
+pak::pak("StrategicProjects/pikchr")
+```
+
+```{r}
+library(pikchr)
+
+pikchr('
+/*
+basic example code
+*/
+arrow right 200% "Rmarkdown" "Source" # teste
+box rad 10px "Rmarkdown" "(knitr)" bold  fit
+arrow right 200% "HTML+SVG" "Output" 
+arrow <-> down from last box.s
+box same "Pikchr" "(pikchr.c)" bold fit
+',
+width = "100%",
+height = "auto",
+align = "center", 
+fontFamily = "Flamenco", svgOnly = TRUE)
+```
+
+
+You can also use the `{pikchr}` engine in a `Rmarkdown` document.
+
+```{pikchr}
+#| width: 100%
+#| height: auto
+#| fig.align: center
+#| fontFamily: Jost
+/*
+basic example code in a markdown chunk.
+*/
+arrow right 200% "Rmarkdown" "Source" 
+box rad 10px "Rmarkdown" "(knitr)" bold  fit
+arrow right 200% "HTML+SVG" "Output" 
+arrow <-> down from last box.s
+box same "Pikchr" "(pikchr.c)" bold fit
+```
+

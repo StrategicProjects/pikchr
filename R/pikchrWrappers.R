@@ -30,6 +30,7 @@
 #' @import utils
 #' @import stringr
 #' @import rsvg
+#' @import dplyr
 #' @importFrom stringr str_replace
 #' @importFrom htmltools HTML tags browsable
 #' @export 
@@ -74,7 +75,7 @@ pikchr <- function(code,
   }
   
   #data("google_fonts", package =  "pikchr")
-  font_styles <- google_fonts %>% filter(family == fontFamily) %>% pull(styles)
+  font_styles <- google_fonts %>% dplyr::filter(family == fontFamily) %>% dplyr::pull	(styles)
   if (length(font_styles) == 1L) {
     result <- stringr::str_replace(result, pattern = "(<svg.*?>)",
                                    replacement = paste0("\\1", '<def><style type="text/css">@import url(https://fonts.googleapis.com/css2?family=', fontFamily, font_styles, ');</style></def>'))
