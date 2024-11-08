@@ -1,34 +1,4 @@
 url: https://strategicprojects.github.io/pikchr/
 template:
-  light-switch: yes
-  trailing_slash_redirect: yes
-  package: tidytemplate
   bootstrap: 5
-  bslib: ~
-figures:
-  fig.ext: svg
-navbar:
-  structure:
-    right:
-    - search
-    - github
-    - lightswitch
-  components:
-    github:
-      icon: fa-github
-      href: https://github.com/StrategicProjects/pikchr
-      aria-label: Github
-footer:
-  structure:
-    left: rmd
-    right: developed_by
-  components:
-    rmd: |
-      **pikchr** is part of an ecosystem of R packages for data analysis and
-      computational document processing<br>developed by the [Secretaria Executiva
-      de Monitoramento Estratégico](https://monitoramento.sepe.pe.gov.br).
-    developed_by: |
-      Developed by André Leite and Hugo Medeiros
-development:
-  mode: auto
 
