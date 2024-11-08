@@ -14,7 +14,7 @@ output:
 <!-- badges: start -->
 ![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/pikchr) &nbsp; 
 ![CRAN Downloads](https://cranlogs.r-pkg.org/badges/grand-total/pikchr) &nbsp; 
-![](https://img.shields.io/badge/devel%20version-0.98-blue.svg)
+![](https://img.shields.io/badge/devel%20version-1.0.0-blue.svg)
 <!-- badges: end -->
 
 
