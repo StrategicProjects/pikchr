@@ -1,7 +1,7 @@
 Type: Package
 Package: pikchr
 Title: R Wrapper for 'pikchr' (PIC) Diagram Language
-Version: 0.98
+Version: 1.0.0
 Date: 2024-09-25
 Authors@R: c(
             person("Andre", "Leite", email = "leite@castlab.org", role = c("aut", "cre")),
