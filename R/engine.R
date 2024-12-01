@@ -127,23 +127,23 @@ eng_pikchr_validate_options <- function(options) {
 #' @return The result of calling the current Knitr plot hook with the specified plot file and options.
 #' @keywords internal
 run_hook_plot <- function(x, options) {
-  # Verifica se o arquivo existe antes de registrá-lo
+  
   if (!file.exists(x)) {
-    stop(sprintf("Arquivo de plot não encontrado: %s", x))
+    stop(sprintf("File not found: %s", x))
   }
   
-  # Registra o arquivo no ambiente Knitr
+  
   opts_knit$append(plot_files = x)
   
-  # Recupera o hook atual para 'plot'
+
   hook <- knit_hooks$get('plot')
   
   # Garante que o hook está definido
   if (is.null(hook)) {
-    stop("Nenhum hook de plot está definido no ambiente Knitr.")
+    stop("No hook defined in Knitr.")
   }
   
-  # Adiciona alinhamento opcional, se definido
+  
   if (!is.null(options$align)) {
     options$fig.align <- options$align
   }
@@ -152,7 +152,7 @@ run_hook_plot <- function(x, options) {
   tryCatch(
     hook(x, options),
     error = function(e) {
-      stop(sprintf("Erro ao executar o hook de plot: %s", e$message))
+      stop(sprintf("Error on plot: %s", e$message))
     }
   )
 }
