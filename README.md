@@ -52,7 +52,6 @@ fontFamily = "Flamenco")
 ```
 
 
-```{=html}
 <svg style='width:75%;height:auto;font-size:75%;font-family:Flamenco;margin:10px 0 10px 0;' xmlns='http://www.w3.org/2000/svg'  class="pikchr" viewBox="0 0 409.075 177.12"><def><style type="text/css">@import url(https://fonts.googleapis.com/css2?family=Flamenco:wght@300;400);</style></def>
 <polygon points="146.16,27.36 134.64,31.68 134.64,23.04" style="fill:rgb(0,0,0)"/>
 <path d="M2.16,27.36L140.4,27.36"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
@@ -72,8 +71,6 @@ fontFamily = "Flamenco")
 <text x="202.378" y="139.68" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">Pikchr</text>
 <text x="202.378" y="159.84" text-anchor="middle" font-weight="bold" fill="rgb(0,0,0)" dominant-baseline="central">(pikchr.c)</text>
 </svg>
-
-```
 
 
 
@@ -97,7 +94,6 @@ arrow <-> down from last box.s
 box same "Pikchr" "(pikchr.c)" fit fill 0xF4D35E
 ```
 ````
-
 
 <div class = "container_pikchr inline-svg  unnamed-chunk-5" style="text-align:center;"><svg style='width:50%;height:auto;font-size:14;font-family:Jost;margin:10px 0 10px 0;' xmlns='http://www.w3.org/2000/svg'  class="pikchr inline-svg  unnamed-chunk-5" viewBox="0 0 409.075 177.12"><def><style type="text/css">@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900);</style></def>
 <polygon points="146.16,27.36 134.64,31.68 134.64,23.04" style="fill:rgb(0,0,0)"/>
