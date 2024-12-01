@@ -120,3 +120,107 @@ box same "Pikchr" "(pikchr.c)" fit fill 0xF4D35E
 </svg>
 </div>
 
+
+
+``` r
+lgt = .2
+
+passo = .2
+thickness = .01
+
+
+define half_hex_down { 
+    A:line down $1*(sqrt(3)/2) right $1/2 \
+        then left 2*$1 \
+        then up $1*(sqrt(3)/2) right $1/2 \
+        close color $3 fill $4
+    text $2 at last .c color $5
+}
+
+define half_hex_up { 
+    A:line  down $1*(sqrt(3)/2) left  $1/2 \
+        then left $1 \
+        then up $1*(sqrt(3)/2) left $1/2 \
+        close color $3 fill $4
+    text $2 at last .c color $5
+}
+
+
+define hex { 
+    A:line down $1*(sqrt(3)/2) right $1/2 \
+        then down $1*(sqrt(3)/2) left  $1/2 \
+        then left $1 \
+        then up $1*(sqrt(3)/2) left $1/2 \
+        then up $1*(sqrt(3)/2) right $1/2 \
+        close color $3 fill $4
+}
+
+define hex_up { 
+    A:line down $1*(sqrt(3)/2) right $1 \
+        then down $1 \
+        then down $1*(sqrt(3)/2) left  $1 \
+        then up $1*(sqrt(3)/2) left $1 \
+        then up $1 \
+        then up $1*(sqrt(3)/2) right $1 \
+        close color $3 fill $4
+    text $2 at last .c color $5
+}
+
+define hex_dgr {
+   P:(0,0)
+   C1: circle rad .01 with .c at P.c thin color $2
+   C2: circle rad .01 with .c at C1.c + ($1, -$1*(sqrt(3)/2)) thin color $2
+   C3: circle rad .01 with .c at C2.c + (0, -$1) thin  color $2
+   C4: circle rad .01 with .c at C3.c + (-$1, -$1*(sqrt(3)/2)) thin color $2
+   C5: circle rad .01 with .c at C4.c + (-$1, $1*(sqrt(3)/2)) thin color $2
+   C6: circle rad .01 with .c at C5.c + (0, $1) thin color $2
+   L1: line from C1.se to C2.nw thin color $2
+   L2: line from C2.s to C3.n thin color $2
+   L3: line from C3.sw to C4.ne thin color $2
+   L4: line from C4.nw to C5.se thin color $2
+   L5: line from C5.n to C6.s thin color $2
+   L6: line from C6.ne to C1.sw thin color $2
+   
+}
+
+
+H2: [hex_up(lgt ,  "Pikchr" small, 0x196F3D, 0x27AE60, white)]
+H3: [hex_dgr(lgt*.8, 0x7DCEA0)] with .c at H2.c
+H4: [hex_dgr(lgt*.6, 0x52BE80)] with .c at H2.c
+
+arc from H4.C3.sw to H4.C5.se thin cw color 0x52BE80
+arc from H4.C2.nw to H4.C6.ne thin ccw color 0x52BE80
+```
+
+
+<div class = "container_pikchr inline-svg  unnamed-chunk-6" style="text-align:center;"><svg style='width:50%;height:auto;font-size:;font-family:MonteCarlo;margin:10px 0 10px 0;' xmlns='http://www.w3.org/2000/svg'  class="pikchr inline-svg  unnamed-chunk-6" viewBox="0 0 60.48 81.5631"><def><style type="text/css">@import url(https://fonts.googleapis.com/css2?family=MonteCarlo:wght@400);</style></def>
+<path d="M30.24,1.44L59.04,26.3815L59.04,55.1815L30.24,80.1231L1.44,55.1815L1.44,26.3815L30.24,1.44Z"  style="fill:rgb(39,174,96);stroke-width:1.44;stroke-linejoin:round;stroke:rgb(25,111,61);" />
+<text lengthAdjust="spacingAndGlyphs"  x="30.24" y="40.7815" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">Pikchr</text>
+<circle cx="30.24" cy="9.30831" r="1.44"  style="fill:none;stroke-width:0.9648;stroke:rgb(125,206,160);" />
+<circle cx="53.28" cy="29.2615" r="1.44"  style="fill:none;stroke-width:0.9648;stroke:rgb(125,206,160);" />
+<circle cx="53.28" cy="52.3015" r="1.44"  style="fill:none;stroke-width:0.9648;stroke:rgb(125,206,160);" />
+<circle cx="30.24" cy="72.2548" r="1.44"  style="fill:none;stroke-width:0.9648;stroke:rgb(125,206,160);" />
+<circle cx="7.2" cy="52.3015" r="1.44"  style="fill:none;stroke-width:0.9648;stroke:rgb(125,206,160);" />
+<circle cx="7.2" cy="29.2615" r="1.44"  style="fill:none;stroke-width:0.9648;stroke:rgb(125,206,160);" />
+<path d="M31.2582,10.3265L52.2618,28.2433"  style="fill:none;stroke-width:0.9648;stroke:rgb(125,206,160);" />
+<path d="M53.28,30.7015L53.28,50.8615"  style="fill:none;stroke-width:0.9648;stroke:rgb(125,206,160);" />
+<path d="M52.2618,53.3198L31.2582,71.2365"  style="fill:none;stroke-width:0.9648;stroke:rgb(125,206,160);" />
+<path d="M29.2218,71.2365L8.21823,53.3198"  style="fill:none;stroke-width:0.9648;stroke:rgb(125,206,160);" />
+<path d="M7.2,50.8615L7.2,30.7015"  style="fill:none;stroke-width:0.9648;stroke:rgb(125,206,160);" />
+<path d="M8.21823,28.2433L29.2218,10.3265"  style="fill:none;stroke-width:0.9648;stroke:rgb(125,206,160);" />
+<circle cx="30.24" cy="17.1766" r="1.44"  style="fill:none;stroke-width:0.9648;stroke:rgb(82,190,128);" />
+<circle cx="47.52" cy="32.1415" r="1.44"  style="fill:none;stroke-width:0.9648;stroke:rgb(82,190,128);" />
+<circle cx="47.52" cy="49.4215" r="1.44"  style="fill:none;stroke-width:0.9648;stroke:rgb(82,190,128);" />
+<circle cx="30.24" cy="64.3865" r="1.44"  style="fill:none;stroke-width:0.9648;stroke:rgb(82,190,128);" />
+<circle cx="12.96" cy="49.4215" r="1.44"  style="fill:none;stroke-width:0.9648;stroke:rgb(82,190,128);" />
+<circle cx="12.96" cy="32.1415" r="1.44"  style="fill:none;stroke-width:0.9648;stroke:rgb(82,190,128);" />
+<path d="M31.2582,18.1948L46.5018,31.1233"  style="fill:none;stroke-width:0.9648;stroke:rgb(82,190,128);" />
+<path d="M47.52,33.5815L47.52,47.9815"  style="fill:none;stroke-width:0.9648;stroke:rgb(82,190,128);" />
+<path d="M46.5018,50.4398L31.2582,63.3682"  style="fill:none;stroke-width:0.9648;stroke:rgb(82,190,128);" />
+<path d="M29.2218,63.3682L13.9782,50.4398"  style="fill:none;stroke-width:0.9648;stroke:rgb(82,190,128);" />
+<path d="M12.96,47.9815L12.96,33.5815"  style="fill:none;stroke-width:0.9648;stroke:rgb(82,190,128);" />
+<path d="M13.9782,31.1233L29.2218,18.1948"  style="fill:none;stroke-width:0.9648;stroke:rgb(82,190,128);" />
+<path d="M46.5018,50.4398Q30.24,66.7015 13.9782,50.4398"  style="fill:none;stroke-width:0.9648;stroke:rgb(82,190,128);" />
+<path d="M46.5018,31.1233Q30.24,14.8615 13.9782,31.1233"  style="fill:none;stroke-width:0.9648;stroke:rgb(82,190,128);" />
+</svg>
+</div>
