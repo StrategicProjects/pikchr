@@ -44,7 +44,6 @@ pikchr <- function(code,
                    css = NULL,
                    margin = NULL,
                    svgOnly = FALSE) {
-  
   code_clean <- stringr::str_replace_all(code, "\\\\*\\s*\\n\\s*then", " then")
   
   result <- .Call("pikchr_c", code_clean, class)
@@ -86,7 +85,7 @@ pikchr <- function(code,
   font_styles <- google_fonts %>% dplyr::filter(family == fontFamily) %>% dplyr::pull	(styles)
   if (length(font_styles) == 1L) {
     result <- stringr::str_replace(result, pattern = "(<svg.*?>)",
-                                   replacement = paste0("\\1", '<def><style type="text/css">@import url(https://fonts.googleapis.com/css2?family=', fontFamily, font_styles, ');</style></def>'))
+                                   replacement = paste0("\\1", '<def><style type="text/css">@import url(https://fonts.googleapis.com/css2?family=', stringr::str_replace_all(fontFamily, "\\s", "+"), font_styles, ');</style></def>'))
   } else {
     if (fontFamily != "inherit") message("Google font not founded, check the spelling. Using inherit.")
   }
@@ -111,3 +110,7 @@ pikchr <- function(code,
 #' }
 #' @source <https://fonts.google.com>
 "google_fonts"
+
+
+## quiets concerns of R CMD check re: the .'s that appear in pipelines
+if(getRversion() >= "4.1.0")  utils::globalVariables(c("."))

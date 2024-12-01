@@ -2,6 +2,7 @@
 
 export(pikchr)
 import(brio)
+import(dplyr)
 import(htmltools)
 import(knitr)
 import(rlang)

@@ -1,4 +1,4 @@
-url: https://strategicprojects.github.io/pikchr/
+url: https://monitoramento.sepe.pe.gov.br/pikchr/
 template:
   light-switch: true
   trailing_slash_redirect: true
@@ -16,7 +16,7 @@ template:
 
 navbar:
   structure:
-    right: [search, github, lightswitch]
+    right: [search, github]
   components:
     github:
       icon: fa-github
@@ -38,7 +38,7 @@ footer:
         computational document processing<br>developed at the [Secretaria Executiva
         de Monitoramento Estratégico](https://monitoramento.sepe.pe.gov.br).
       developed_by: |
-        Beveloped by André Leite and Hugo Medeiros.
+        Developed by André Leite and Hugo Medeiros.
 
 development:
   mode: auto

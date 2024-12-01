@@ -1,5 +1,10 @@
 ---
 title: "Pikchr User Manual"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Pikchr User Manual}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r, include = FALSE}

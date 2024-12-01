@@ -22,10 +22,13 @@ Imports:
     purrr,
     stringr,
     rsvg
+Suggests:
+    kableExtra,
+    tidyverse    
 URL: <https://monitoramento.sepe.pe.gov.br/pikchr/>, <https://github.com/StrategicProjects/pikchr>
 Note:
     This package makes use of the 'pikchr' source code created by Richard Hipp (<https://pikchr.org>). 
 Depends: 
-    R (>= 2.10)
+    R (>= 4.0)
 LazyData: true
 Config/Needs/website: tidyverse/tidytemplate, rmarkdown

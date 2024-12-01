@@ -1,5 +1,10 @@
 ---
 title: "Examples"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Examples}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r, include = FALSE}
@@ -22,6 +27,9 @@ library(pikchr)
 ### Example 1
 
 ```{pikchr}
+#| fontFamily: Abel
+# fontFamily: Abel
+
 /*
  Example 1. André Leite (leite@castlab.org)
  */
@@ -42,10 +50,13 @@ library(pikchr)
 
 ### Example 2
 
-```{pikchr, size = '100%'}  
+```{pikchr}  
+#| width: 80%
+
 /*
  Example 2. André Leite (leite@castlab.org)
  */
+  
 dimen_= .75
 Origem:(0,0) 
 B1:box "Agente" "Externo";
@@ -86,11 +97,14 @@ B11:box wid 1 "Sistema de" "Anúncio";
 ### Example 3
 
 ```{pikchr}  
+#| fontFamily: Jost
+#| width: 100%
+#| fontSize: 75%
 /*
  Example 3. André Leite (leite@castlab.org)
  */
-               $len = 175px;
-               margin = 20px;
+$len = 175px;
+margin = 20px;
 /* First Stage */
           B1E: box rad 5px wid 2*$len fill white;
     LineCusto: line <- from B1E.n - ((2/3)*$len,0) up .25*$len;
@@ -136,6 +150,9 @@ LineResultado: line -> "Polos" aligned above italic from B2E.e \
 ### Example 4    
     
 ```{pikchr}  
+#| fontFamily: Abel
+#| fontSize: 80%
+ 
 /*
  Example 4. André Leite (leite@castlab.org)
  */
@@ -189,6 +206,7 @@ cell(,3*i/2,-j/2)
 ### Example 6     
     
 ```{pikchr}
+#| fontSize: 80%
 /*
  Example 6. Original from pikchr.org and fossil-scm.org
  */
@@ -230,6 +248,7 @@ C5P: circle "C₅\'"
 ### Example 7 
  
 ```{pikchr}
+#| fontSize: 80%
 /*
  Example 7. Original from pikchr.org and fossil-scm.org
  */
@@ -269,6 +288,7 @@ line thin color gray <-> from X2 to X1 "distância" aligned above small \
 ### Example 8
 
 ```{pikchr}
+#| fontSize: 80%
 /*
  Example 8. Original from pikchr.org and fossil-scm.org
  */
@@ -326,6 +346,7 @@ TC: box same "Test Code"
 
 
 ```{pikchr}
+#| fontSize: 80%
 /*
  Example 9. Original from pikchr.org and fossil-scm.org
  */         
@@ -392,6 +413,7 @@ line right until even with X9 - ($r,0) \
 ### Example 10
   
 ```{pikchr}  
+#| fontSize: 75%
 /*
  Example 10. Original from pikchr.org and fossil-scm.org
  */
@@ -463,6 +485,7 @@ D3: circle same as B3 at B3-(0,2*$laneh) "3"
 ### Example 11
 
 ```{pikchr}         
+#| fontSize: 80%
 /*
  Example 11. Original from pikchr.org and fossil-scm.org
  */         
@@ -487,6 +510,7 @@ ST:     box "symbol" "table"
 ```
  
 ```{pikchr}
+#| fontSize: 80%
 /*
  Exemplo 11. Original em pikchr.org e fossil-scm.org
  */
@@ -518,6 +542,7 @@ Out:      file "pikchr.o" "or" "pikchr.exe" wid 110%
 ### Example 12
 
 ```{pikchr}
+#| fontSize: 60%
 /*
  Example 12 André Leite (leite@castlab.org)
  */
@@ -572,6 +597,7 @@ B12: box "Medical Assistance" "within 10 minutes" bold fit \
 ### Example 13
 
 ```{pikchr}
+#| fontSize: 70%
 /*
  Example 13. André Leite (leite@castlab.org)
  */         
@@ -669,8 +695,9 @@ box "DER" bold big fit  with .sw at START.end
 ### Example 14
 
 ```{pikchr}
+#| fontSize: 70%
 /*
- Exemplo 14. Original em pikchr.org e fossil-scm.org
+ Exemplo 14. André Leite (leite@castlab.org)
  */
 $r = 0.2in
 linerad = 0.75*$r
@@ -810,6 +837,8 @@ box "e-Fisco" bold big fit  with .sw at START.end
 ### Example 15
 
 ```{pikchr}
+#| fontSize: 70%
+
 /*
  Example 15. André Leite (leite@castlab.org)
  */         
@@ -910,20 +939,96 @@ box "Remessa TCE" bold big fit  with .sw at START.end
 ```
 
 
+### Example 16
+
+
 ```{pikchr}
-B1: box "Etapa 1" bold "Revisão Bibliográfica" wid 2 rad .1 #fill 0xA7C7E7
+#| fontSize: 70%
+/*
+ Example 16. André Leite (leite@castlab.org)
+ */        
+
+B1: box "Etapa 1" bold "Revisão Bibliográfica" wid 2 rad .1 
 arrow
-B2: box "Etapa 2" bold "Definição do Objeto de Estudo" wid 2 rad .1 #fill 0xB2E1B5
+B2: box "Etapa 2" bold "Definição do Objeto de Estudo" wid 2 rad .1 
 arrow right then down 1 then left rad .2 
-B3: box "Etapa 3" bold "Coleta de Dados" wid 2 rad .1 #fill 0xFDFD96
+B3: box "Etapa 3" bold "Coleta de Dados" wid 2 rad .1 
 arrow
-B4: box "Etapa 4" bold "Análise de Dados" wid 2 rad .1 #fill 0xD4A5E3
+B4: box "Etapa 4" bold "Análise de Dados" wid 2 rad .1
 arrow left then down 1 then right rad .2
-B5: box "Etapa 5" bold "Propostas e Diretrizes" wid 2 rad .1 #fill 0xFBC4AB
+B5: box "Etapa 5" bold "Propostas e Diretrizes" wid 2 rad .1 
 arrow
-B6: box "Etapa 6" bold "Validação das Diretrizes" wid 2 rad .1  #fill 0xF8C8DC
+B6: box "Etapa 6" bold "Validação das Diretrizes" wid 2 rad .1 
 arrow right then down 1 then left until even with B6.c rad .2
-B7: box "Etapa 7" bold "Apresentação dos Resultados" wid 2 rad .1 # fill 0xD3D3D3
+B7: box "Etapa 7" bold "Apresentação dos Resultados" wid 2 rad .1
 
 ```
+
+
+### Example 17
+
+```{pikchr}
+#| width: 500
+#| fontFamily: Akronim
+#| fontSize: 50%
+# fontSize: 50%
+# fontFamily: Akronim 
+
+/*
+ Example 17. André Leite (leite@castlab.org)
+ */         
+
+lgt = .2
+cor_1 = 0xccd5ae
+cor_2 = 0xe9edc9
+cor_3 = 0xfefae0
+cor_4 = 0xfaedcd #d4a373
+cor_5 = 0xd7e3fc
+
+cor_1f = 0x283618
+cor_2f = 0x606c38
+cor_3f = 0xdda15e
+cor_4f = 0xbc6c25
+cor_5f = 0x3083dc
+
+passo = .2
+thickness = .01
+
+
+define half_hex_down { 
+    A:line down $1*(sqrt(3)/2) right $1/2 \
+        then left 2*$1 \
+        then up $1*(sqrt(3)/2) right $1/2 \
+        close color $3 fill $4
+    text $2 at last .c color $5
+}
+
+define half_hex_up { 
+    A:line  down $1*(sqrt(3)/2) left  $1/2 \
+        then left $1 \
+        then up $1*(sqrt(3)/2) left $1/2 \
+        close color $3 fill $4
+    text $2 at last .c color $5
+}
+
+
+define hex { 
+    A:line down $1*(sqrt(3)/2) right $1/2 \
+        then down $1*(sqrt(3)/2) left  $1/2 \
+        then left $1 \
+        then up $1*(sqrt(3)/2) left $1/2 \
+        then up $1*(sqrt(3)/2) right $1/2 \
+        close color $3 fill $4
+    text $2 at last .c color $5
+}
+
+
+#H2: [hex(lgt ,  "Rapid" "Fuzz" italic, cor_1, cor_1, cor_1f)]
+
+HD: [half_hex_down(lgt ,  "Rapid", 0x0070c0, white, 0x0070c0)]
+
+HU: [half_hex_up(lgt ,  "Fuzz" italic, 0x0070c0, 0x0070c0, white)] \
+  with .n at .0175 above HD.s 
+```
+
 

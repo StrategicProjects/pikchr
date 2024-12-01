@@ -5,3 +5,6 @@ src/init.o
 docs
 .DS_Store
 docs.zip
+README.html
+/doc/
+/Meta/

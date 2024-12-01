@@ -19,7 +19,7 @@ It processes Pikchr code embedded in R Markdown documents and outputs either HTM
 }
 \details{
 The `eng_pikchr` function allows you to use Pikchr code inside R Markdown documents, rendering it as an image.
-It supports options like `width`, `height`, `font size`, `font family`, and CSS classes to customize the output.
+It supports options like `width`, `height`, font `size`, font `family`, and CSS classes to customize the output.
 The function automatically detects the output format (HTML or LaTeX) and generates the appropriate image.
 
 If the output is LaTeX, the SVG is converted to PNG using the `rsvg_png()` function.
@@ -32,6 +32,7 @@ If the output is LaTeX, the SVG is converted to PNG using the `rsvg_png()` funct
 - `height`: Height of the rendered image (default `"auto"`).
 - `size`: Font size for the Pikchr diagram (default `"100%"`).
 - `family`: Font family for the Pikchr diagram (default `"inherit"`).
+- `align`: Figure align: left, right, center.
 - `css`: Additional CSS for customizing the Pikchr diagram.
 - `class`: CSS class to apply to the diagram (default `"pikchr"`).
 - `margin`: CSS margin around the image (default `"10px 0 10px 0"`).
