@@ -52,7 +52,7 @@ box same "Pikchr" "(pikchr.c)" bold fit
        fontFamily = "Flamenco")
 ```
 
-![Figure 1](man/figures/fig3.png)
+![Figure 1](man/figures/fig1.png)
 
 You can also use the `{pikchr}` engine in a `Rmarkdown` document.
 
@@ -76,7 +76,9 @@ box same "Pikchr" "(pikchr.c)" fit fill 0xF4D35E
 
 <div class="container_pikchr inline-svg unnamed-chunk-5"
 style="text-align:center;">
+
 ![Figure 2](man/figures/fig2.png)
+
 </div>
 
 ``` r
