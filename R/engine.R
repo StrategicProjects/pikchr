@@ -51,7 +51,7 @@ eng_pikchr = function(options) {
   margin <- options$margin
   lang <- options$lang
   code <- paste0(options$code, collapse = " \n")
-  piksvg <- pikchr(code, 
+  piksvg <- pikchr(code,
                    width = width,
                    height = height,
                    fontSize = ifelse(is.null(size) | (size == "normalsize"), "100%", size),
@@ -62,27 +62,20 @@ eng_pikchr = function(options) {
                    margin = ifelse(is.null(margin), "10px 0 10px 0", margin),
                    svgOnly = TRUE
   )
-  
-  
+
+
   fig <- tempfile(fileext = ".svg")
   brio::write_lines(piksvg, fig)
-  
-  options$fig.num = 1L; 
+
+  options$fig.num = 1L;
   options$fig.cur = 1L
   options$engine <- 'r'
-  
-  if (knitr::is_latex_output() & (!knitr::is_html_output())) {
-    png  <- tempfile(fileext = ".png")
-    rsvg::rsvg_png(svg = fig, file = png)
-    piksvg <- run_hook_plot(png, options)
-  }
-  
-  if (echo) 
+
+  if (echo)
     code <- options$code
   else
     code <- ''
-  
-  #extra = run_hook_plot(fig, options)
+
   knitr::engine_output(options, code, '', piksvg)
 }
 
@@ -133,11 +126,41 @@ eng_pikchr_validate_options <- function(options) {
 #'
 #' @return The result of calling the current Knitr plot hook with the specified plot file and options.
 #' @keywords internal
-run_hook_plot = function(x, options) {
+run_hook_plot <- function(x, options) {
+  # Verifica se o arquivo existe antes de registrá-lo
+  if (!file.exists(x)) {
+    stop(sprintf("Arquivo de plot não encontrado: %s", x))
+  }
+  
+  # Registra o arquivo no ambiente Knitr
   opts_knit$append(plot_files = x)
-  hook = knit_hooks$get('plot')
-  hook(x, options)
+  
+  # Recupera o hook atual para 'plot'
+  hook <- knit_hooks$get('plot')
+  
+  # Garante que o hook está definido
+  if (is.null(hook)) {
+    stop("Nenhum hook de plot está definido no ambiente Knitr.")
+  }
+  
+  # Adiciona alinhamento opcional, se definido
+  if (!is.null(options$align)) {
+    options$fig.align <- options$align
+  }
+  
+  # Executa o hook de plot
+  tryCatch(
+    hook(x, options),
+    error = function(e) {
+      stop(sprintf("Erro ao executar o hook de plot: %s", e$message))
+    }
+  )
 }
+# run_hook_plot = function(x, options) {
+#   opts_knit$append(plot_files = x)
+#   hook = knit_hooks$get('plot')
+#   hook(x, options)
+# }
 
 
 # set engines for interpreted languages
