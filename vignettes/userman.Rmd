@@ -31,9 +31,9 @@ library(pikchr)
 This is a guide to generating diagrams using Pikchr,
 pronounced "picture."  This guide is
 designed to teach you to use Pikchr in a more accessible manner than
-you get by reading the [grammar specification](./grammar.md). We leave
+you get by reading the [grammar specification](https://pikchr.org/home/doc/trunk/doc/grammar.md). We leave
 discussion of the scope and purpose of Pikchr to a [separate
-document](./purpose.md).
+document](https://pikchr.org/home/doc/trunk/doc/purpose.md).
 
 For more details and other perspectives, see the following resources:
 
@@ -49,7 +49,7 @@ The design goal of Pikchr is to enable embedded line diagrams in Markdown or oth
 simple markup languages.  The details on how to embed Pikchr in Markdown is
 [covered separately][embed].  For the purpose of this tutorial, we will only write
 pure Pikchr scripts without the surrounding markup.  To experiment
-with Pikchr, visit the [](/pikchrshow) page on the website hosting
+with Pikchr, visit the [/pikchrshow](https://pikchr.org/home/pikchrshow) page on the website hosting
 this document (preferably in a separate window).  Type in the following
 script and press the Preview button:
 <a id="firstdemo"></a>
@@ -259,7 +259,7 @@ whitespace in between them:
 Implementation note: a "move" is really just an invisible "`line`,"
 which is why
 the following script generates the same output as the previous.
-([Try it!](/pikchrshow?content=box;line%20invisible;circle;line%20invisible;cylinder))
+([Try it!](https://pikchr.org/home/pikchrshow?content=box;line%20invisible;circle;line%20invisible;cylinder))
 
 ```{pikchr}
 #| eval: false
@@ -792,7 +792,7 @@ line thin color gray from (previous,X3) down 30% <-
 line thin color gray from (previous text,X4) up 30% <-
 ```
 
-For a [cylinder object](./cylinderobj.md) the `radius` determines the
+For a [cylinder object](https://pikchr.org/home/doc/trunk/doc/cylinderobj.md) the `radius` determines the
 thickness of the end caps:
 
 ```{pikchr}
@@ -815,7 +815,7 @@ line thin color gray from (previous,X4) down 30% <-
 line thin color gray from (previous text,X3) up 30% <-
 ```
 
-For a [file object](./fileobj.md) the `radius` determines the size of
+For a [file object](https://pikchr.org/home/doc/trunk/doc/fileobj.md) the `radius` determines the size of
 the page fold-over in the upper-right corner:
 
 ```{pikchr}
@@ -838,7 +838,7 @@ line thin color gray from (previous,X4) down 30% <-
 line thin color gray from (previous text,X3) up 30% <-
 ```
 
-For a [circle object](./circleobj.md), the width, height, and diameter
+For a [circle object](https://pikchr.org/home/doc/trunk/doc/circleobj.md), the width, height, and diameter
 are always the same, and the radius is always half the diameter.  Changing
 any parameter automatically adjusts the other three.
 
@@ -866,7 +866,7 @@ text " diameter" ljust at end of previous line
 ```
 
 Even though they are curvy objects, the `radius` (and hence `diameter`)
-has no effect on [ellipse](./ellipseobj.md) and [oval](./ovalobj.md) objects.
+has no effect on [ellipse](https://pikchr.org/home/doc/trunk/doc/ellipseobj.md) and [oval](https://pikchr.org/home/doc/trunk/doc/ovalobj.md) objects.
 The size of those objects is determined purely by their width and height:
 
 ```{pikchr}

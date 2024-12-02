@@ -979,21 +979,6 @@ B7: box "Etapa 7" bold "Apresentação dos Resultados" wid 2 rad .1
  */         
 
 lgt = .2
-cor_1 = 0xccd5ae
-cor_2 = 0xe9edc9
-cor_3 = 0xfefae0
-cor_4 = 0xfaedcd #d4a373
-cor_5 = 0xd7e3fc
-
-cor_1f = 0x283618
-cor_2f = 0x606c38
-cor_3f = 0xdda15e
-cor_4f = 0xbc6c25
-cor_5f = 0x3083dc
-
-passo = .2
-thickness = .01
-
 
 define half_hex_down { 
     A:line down $1*(sqrt(3)/2) right $1/2 \
@@ -1011,24 +996,58 @@ define half_hex_up {
     text $2 at last .c color $5
 }
 
-
-define hex { 
-    A:line down $1*(sqrt(3)/2) right $1/2 \
-        then down $1*(sqrt(3)/2) left  $1/2 \
-        then left $1 \
-        then up $1*(sqrt(3)/2) left $1/2 \
-        then up $1*(sqrt(3)/2) right $1/2 \
-        close color $3 fill $4
-    text $2 at last .c color $5
-}
-
-
-#H2: [hex(lgt ,  "Rapid" "Fuzz" italic, cor_1, cor_1, cor_1f)]
-
 HD: [half_hex_down(lgt ,  "Rapid", 0x0070c0, white, 0x0070c0)]
 
 HU: [half_hex_up(lgt ,  "Fuzz" italic, 0x0070c0, 0x0070c0, white)] \
   with .n at .0175 above HD.s 
 ```
 
+### Example 18
 
+```{pikchr}
+#| echo: true
+#| width: 25%
+#| height: auto
+#| align: center
+#| fontSize: 50%
+#| fontFamily: MonteCarlo
+
+/*
+ Example 18. André Leite (leite@castlab.org)
+ */  
+
+lgt = .2
+
+define hex_up { 
+    A:line right $1*(sqrt(3)/2) down $1/2 \
+        then down $1 \
+        then down $1/2 left $1*(sqrt(3)/2) \
+        then up $1/2 left $1*(sqrt(3)/2) \
+        then up $1 \
+        then right $1*(sqrt(3)/2) up $1/2 \
+        close color $3 fill $4
+    text $2 at last .c color $5
+}
+
+define hex_dgr {
+   P:(0,0)
+   C1: circle rad .01 with .c at P.c thin color $2
+   C2: circle rad .01 with .c at C1.c + ($1*(sqrt(3)/2), -$1/2) thin color $2
+   C3: circle rad .01 with .c at C2.c + (0, -$1) thin  color $2
+   C4: circle rad .01 with .c at C3.c + (-$1*(sqrt(3)/2), -$1/2) thin color $2
+   C5: circle rad .01 with .c at C4.c + (-$1*(sqrt(3)/2), $1/2) thin color $2
+   C6: circle rad .01 with .c at C5.c + (0, $1) thin color $2
+   L1: line from C1.se to C2.nw thin color $2
+   L2: line from C2.s to C3.n thin color $2
+   L3: line from C3.sw to C4.ne thin color $2
+   L4: line from C4.nw to C5.se thin color $2
+   L5: line from C5.n to C6.s thin color $2
+   L6: line from C6.ne to C1.sw thin color $2
+   
+}
+
+
+H2: [hex_up(lgt ,  "Pikchr" small, 0x196F3D, 0x27AE60, white)]
+H3: [hex_dgr(lgt*.8, 0x7DCEA0)] with .c at H2.c
+H4: [hex_dgr(lgt*.6, 0x52BE80)] with .c at H2.c
+```

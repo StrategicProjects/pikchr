@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# pikchr <a href="https://monitoramento.sepe.pe.gov.br/pikchr/"><img src="man/figures/logo2.png" align="right" height="139" alt="pikchr website" /></a>
+# pikchr <a href="https://monitoramento.sepe.pe.gov.br/pikchr/"><img src="man/figures/logo.png" align="right" height="139" alt="pikchr website" /></a>
 
 <!-- badges: start -->
 
@@ -52,7 +52,7 @@ box same "Pikchr" "(pikchr.c)" bold fit
        fontFamily = "Flamenco")
 ```
 
-![Figure 1](man/figures/fig1.png)
+![](man/figures/fig1.png)
 
 You can also use the `{pikchr}` engine in a `Rmarkdown` document.
 
@@ -77,82 +77,50 @@ box same "Pikchr" "(pikchr.c)" fit fill 0xF4D35E
 <div class="container_pikchr inline-svg unnamed-chunk-5"
 style="text-align:center;">
 
-![Figure 2](man/figures/fig2.png)
+![](man/figures/fig2.png)
 
 </div>
 
 ``` r
 lgt = .2
 
-passo = .2
-thickness = .01
-
-
-define half_hex_down { 
-  A:line down $1*(sqrt(3)/2) right $1/2 \
-  then left 2*$1 \
-  then up $1*(sqrt(3)/2) right $1/2 \
-  close color $3 fill $4
-  text $2 at last .c color $5
-}
-
-define half_hex_up { 
-  A:line  down $1*(sqrt(3)/2) left  $1/2 \
-  then left $1 \
-  then up $1*(sqrt(3)/2) left $1/2 \
-  close color $3 fill $4
-  text $2 at last .c color $5
-}
-
-
-define hex { 
-  A:line down $1*(sqrt(3)/2) right $1/2 \
-  then down $1*(sqrt(3)/2) left  $1/2 \
-  then left $1 \
-  then up $1*(sqrt(3)/2) left $1/2 \
-  then up $1*(sqrt(3)/2) right $1/2 \
-  close color $3 fill $4
-}
-
 define hex_up { 
-  A:line down $1*(sqrt(3)/2) right $1 \
-  then down $1 \
-  then down $1*(sqrt(3)/2) left  $1 \
-  then up $1*(sqrt(3)/2) left $1 \
-  then up $1 \
-  then up $1*(sqrt(3)/2) right $1 \
-  close color $3 fill $4
-  text $2 at last .c color $5
+    A:line right $1*(sqrt(3)/2) down $1/2 \
+        then down $1 \
+        then down $1/2 left $1*(sqrt(3)/2) \
+        then up $1/2 left $1*(sqrt(3)/2) \
+        then up $1 \
+        then right $1*(sqrt(3)/2) up $1/2 \
+        close color $3 fill $4
+    text $2 at last .c color $5
 }
 
 define hex_dgr {
-  P:(0,0)
-  C1: circle rad .01 with .c at P.c thin color $2
-  C2: circle rad .01 with .c at C1.c + ($1, -$1*(sqrt(3)/2)) thin color $2
-  C3: circle rad .01 with .c at C2.c + (0, -$1) thin  color $2
-  C4: circle rad .01 with .c at C3.c + (-$1, -$1*(sqrt(3)/2)) thin color $2
-  C5: circle rad .01 with .c at C4.c + (-$1, $1*(sqrt(3)/2)) thin color $2
-  C6: circle rad .01 with .c at C5.c + (0, $1) thin color $2
-  L1: line from C1.se to C2.nw thin color $2
-  L2: line from C2.s to C3.n thin color $2
-  L3: line from C3.sw to C4.ne thin color $2
-  L4: line from C4.nw to C5.se thin color $2
-  L5: line from C5.n to C6.s thin color $2
-  L6: line from C6.ne to C1.sw thin color $2
-  
+   P:(0,0)
+   C1: circle rad .01 with .c at P.c thin color $2
+   C2: circle rad .01 with .c at C1.c + ($1*(sqrt(3)/2), -$1/2) thin color $2
+   C3: circle rad .01 with .c at C2.c + (0, -$1) thin  color $2
+   C4: circle rad .01 with .c at C3.c + (-$1*(sqrt(3)/2), -$1/2) thin color $2
+   C5: circle rad .01 with .c at C4.c + (-$1*(sqrt(3)/2), $1/2) thin color $2
+   C6: circle rad .01 with .c at C5.c + (0, $1) thin color $2
+   L1: line from C1.se to C2.nw thin color $2
+   L2: line from C2.s to C3.n thin color $2
+   L3: line from C3.sw to C4.ne thin color $2
+   L4: line from C4.nw to C5.se thin color $2
+   L5: line from C5.n to C6.s thin color $2
+   L6: line from C6.ne to C1.sw thin color $2
+   
 }
 
 
 H2: [hex_up(lgt ,  "Pikchr" small, 0x196F3D, 0x27AE60, white)]
 H3: [hex_dgr(lgt*.8, 0x7DCEA0)] with .c at H2.c
 H4: [hex_dgr(lgt*.6, 0x52BE80)] with .c at H2.c
-
-arc from H4.C3.sw to H4.C5.se thin cw color 0x52BE80
-arc from H4.C2.nw to H4.C6.ne thin ccw color 0x52BE80
 ```
 
 <div class="container_pikchr inline-svg unnamed-chunk-6"
 style="text-align:center;">
 
-![Figure 3](man/figures/fig3.png)
+![](man/figures/fig3.png)
+
 </div>
