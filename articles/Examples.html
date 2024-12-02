@@ -26,7 +26,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">pikchr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.0.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -1031,58 +1031,74 @@ from the <a href="https://pikchr.org" class="external-link">Pikchr</a> project.<
 <span id="cb19-6"><a href="#cb19-6" tabindex="-1"></a> <span class="sc">*</span><span class="er">/</span>         </span>
 <span id="cb19-7"><a href="#cb19-7" tabindex="-1"></a></span>
 <span id="cb19-8"><a href="#cb19-8" tabindex="-1"></a>lgt <span class="ot">=</span> .<span class="dv">2</span></span>
-<span id="cb19-9"><a href="#cb19-9" tabindex="-1"></a>cor_1 <span class="ot">=</span> <span class="dv">0xccd5ae</span></span>
-<span id="cb19-10"><a href="#cb19-10" tabindex="-1"></a>cor_2 <span class="ot">=</span> <span class="dv">0xe9edc9</span></span>
-<span id="cb19-11"><a href="#cb19-11" tabindex="-1"></a>cor_3 <span class="ot">=</span> <span class="dv">0xfefae0</span></span>
-<span id="cb19-12"><a href="#cb19-12" tabindex="-1"></a>cor_4 <span class="ot">=</span> <span class="dv">0xfaedcd</span> <span class="co">#d4a373</span></span>
-<span id="cb19-13"><a href="#cb19-13" tabindex="-1"></a>cor_5 <span class="ot">=</span> <span class="dv">0xd7e3fc</span></span>
-<span id="cb19-14"><a href="#cb19-14" tabindex="-1"></a></span>
-<span id="cb19-15"><a href="#cb19-15" tabindex="-1"></a>cor_1f <span class="ot">=</span> <span class="dv">0x283618</span></span>
-<span id="cb19-16"><a href="#cb19-16" tabindex="-1"></a>cor_2f <span class="ot">=</span> <span class="dv">0x606c38</span></span>
-<span id="cb19-17"><a href="#cb19-17" tabindex="-1"></a>cor_3f <span class="ot">=</span> <span class="dv">0xdda15e</span></span>
-<span id="cb19-18"><a href="#cb19-18" tabindex="-1"></a>cor_4f <span class="ot">=</span> <span class="dv">0xbc6c25</span></span>
-<span id="cb19-19"><a href="#cb19-19" tabindex="-1"></a>cor_5f <span class="ot">=</span> <span class="dv">0x3083dc</span></span>
-<span id="cb19-20"><a href="#cb19-20" tabindex="-1"></a></span>
-<span id="cb19-21"><a href="#cb19-21" tabindex="-1"></a>passo <span class="ot">=</span> .<span class="dv">2</span></span>
-<span id="cb19-22"><a href="#cb19-22" tabindex="-1"></a>thickness <span class="ot">=</span> .<span class="dv">01</span></span>
-<span id="cb19-23"><a href="#cb19-23" tabindex="-1"></a></span>
-<span id="cb19-24"><a href="#cb19-24" tabindex="-1"></a></span>
-<span id="cb19-25"><a href="#cb19-25" tabindex="-1"></a>define half_hex_down { </span>
-<span id="cb19-26"><a href="#cb19-26" tabindex="-1"></a>    A<span class="sc">:</span>line down <span class="sc">$</span><span class="dv">1</span><span class="sc">*</span>(<span class="fu">sqrt</span>(<span class="dv">3</span>)<span class="sc">/</span><span class="dv">2</span>) right <span class="sc">$</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span> \</span>
-<span id="cb19-27"><a href="#cb19-27" tabindex="-1"></a>        then left <span class="dv">2</span><span class="sc">*</span><span class="er">$</span><span class="dv">1</span> \</span>
-<span id="cb19-28"><a href="#cb19-28" tabindex="-1"></a>        then up <span class="sc">$</span><span class="dv">1</span><span class="sc">*</span>(<span class="fu">sqrt</span>(<span class="dv">3</span>)<span class="sc">/</span><span class="dv">2</span>) right <span class="sc">$</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span> \</span>
-<span id="cb19-29"><a href="#cb19-29" tabindex="-1"></a>        close color <span class="sc">$</span><span class="dv">3</span> fill <span class="sc">$</span><span class="dv">4</span></span>
-<span id="cb19-30"><a href="#cb19-30" tabindex="-1"></a>    text <span class="sc">$</span><span class="dv">2</span> at last .c color <span class="sc">$</span><span class="dv">5</span></span>
-<span id="cb19-31"><a href="#cb19-31" tabindex="-1"></a>}</span>
-<span id="cb19-32"><a href="#cb19-32" tabindex="-1"></a></span>
-<span id="cb19-33"><a href="#cb19-33" tabindex="-1"></a>define half_hex_up { </span>
-<span id="cb19-34"><a href="#cb19-34" tabindex="-1"></a>    A<span class="sc">:</span>line  down <span class="sc">$</span><span class="dv">1</span><span class="sc">*</span>(<span class="fu">sqrt</span>(<span class="dv">3</span>)<span class="sc">/</span><span class="dv">2</span>) left  <span class="sc">$</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span> \</span>
-<span id="cb19-35"><a href="#cb19-35" tabindex="-1"></a>        then left <span class="sc">$</span><span class="dv">1</span> \</span>
-<span id="cb19-36"><a href="#cb19-36" tabindex="-1"></a>        then up <span class="sc">$</span><span class="dv">1</span><span class="sc">*</span>(<span class="fu">sqrt</span>(<span class="dv">3</span>)<span class="sc">/</span><span class="dv">2</span>) left <span class="sc">$</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span> \</span>
-<span id="cb19-37"><a href="#cb19-37" tabindex="-1"></a>        close color <span class="sc">$</span><span class="dv">3</span> fill <span class="sc">$</span><span class="dv">4</span></span>
-<span id="cb19-38"><a href="#cb19-38" tabindex="-1"></a>    text <span class="sc">$</span><span class="dv">2</span> at last .c color <span class="sc">$</span><span class="dv">5</span></span>
-<span id="cb19-39"><a href="#cb19-39" tabindex="-1"></a>}</span>
-<span id="cb19-40"><a href="#cb19-40" tabindex="-1"></a></span>
-<span id="cb19-41"><a href="#cb19-41" tabindex="-1"></a></span>
-<span id="cb19-42"><a href="#cb19-42" tabindex="-1"></a>define hex { </span>
-<span id="cb19-43"><a href="#cb19-43" tabindex="-1"></a>    A<span class="sc">:</span>line down <span class="sc">$</span><span class="dv">1</span><span class="sc">*</span>(<span class="fu">sqrt</span>(<span class="dv">3</span>)<span class="sc">/</span><span class="dv">2</span>) right <span class="sc">$</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span> \</span>
-<span id="cb19-44"><a href="#cb19-44" tabindex="-1"></a>        then down <span class="sc">$</span><span class="dv">1</span><span class="sc">*</span>(<span class="fu">sqrt</span>(<span class="dv">3</span>)<span class="sc">/</span><span class="dv">2</span>) left  <span class="sc">$</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span> \</span>
-<span id="cb19-45"><a href="#cb19-45" tabindex="-1"></a>        then left <span class="sc">$</span><span class="dv">1</span> \</span>
-<span id="cb19-46"><a href="#cb19-46" tabindex="-1"></a>        then up <span class="sc">$</span><span class="dv">1</span><span class="sc">*</span>(<span class="fu">sqrt</span>(<span class="dv">3</span>)<span class="sc">/</span><span class="dv">2</span>) left <span class="sc">$</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span> \</span>
-<span id="cb19-47"><a href="#cb19-47" tabindex="-1"></a>        then up <span class="sc">$</span><span class="dv">1</span><span class="sc">*</span>(<span class="fu">sqrt</span>(<span class="dv">3</span>)<span class="sc">/</span><span class="dv">2</span>) right <span class="sc">$</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span> \</span>
-<span id="cb19-48"><a href="#cb19-48" tabindex="-1"></a>        close color <span class="sc">$</span><span class="dv">3</span> fill <span class="sc">$</span><span class="dv">4</span></span>
-<span id="cb19-49"><a href="#cb19-49" tabindex="-1"></a>    text <span class="sc">$</span><span class="dv">2</span> at last .c color <span class="sc">$</span><span class="dv">5</span></span>
-<span id="cb19-50"><a href="#cb19-50" tabindex="-1"></a>}</span>
-<span id="cb19-51"><a href="#cb19-51" tabindex="-1"></a></span>
-<span id="cb19-52"><a href="#cb19-52" tabindex="-1"></a></span>
-<span id="cb19-53"><a href="#cb19-53" tabindex="-1"></a><span class="co">#H2: [hex(lgt ,  "Rapid" "Fuzz" italic, cor_1, cor_1, cor_1f)]</span></span>
-<span id="cb19-54"><a href="#cb19-54" tabindex="-1"></a></span>
-<span id="cb19-55"><a href="#cb19-55" tabindex="-1"></a>HD<span class="sc">:</span> [<span class="fu">half_hex_down</span>(lgt ,  <span class="st">"Rapid"</span>, <span class="dv">0x0070c0</span>, white, <span class="dv">0x0070c0</span>)]</span>
-<span id="cb19-56"><a href="#cb19-56" tabindex="-1"></a></span>
-<span id="cb19-57"><a href="#cb19-57" tabindex="-1"></a>HU<span class="sc">:</span> [<span class="fu">half_hex_up</span>(lgt ,  <span class="st">"Fuzz"</span> italic, <span class="dv">0x0070c0</span>, <span class="dv">0x0070c0</span>, white)] \</span>
-<span id="cb19-58"><a href="#cb19-58" tabindex="-1"></a>  with .n at .<span class="dv">0175</span> above HD.s </span></code></pre></div>
+<span id="cb19-9"><a href="#cb19-9" tabindex="-1"></a></span>
+<span id="cb19-10"><a href="#cb19-10" tabindex="-1"></a>define half_hex_down { </span>
+<span id="cb19-11"><a href="#cb19-11" tabindex="-1"></a>    A<span class="sc">:</span>line down <span class="sc">$</span><span class="dv">1</span><span class="sc">*</span>(<span class="fu">sqrt</span>(<span class="dv">3</span>)<span class="sc">/</span><span class="dv">2</span>) right <span class="sc">$</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span> \</span>
+<span id="cb19-12"><a href="#cb19-12" tabindex="-1"></a>        then left <span class="dv">2</span><span class="sc">*</span><span class="er">$</span><span class="dv">1</span> \</span>
+<span id="cb19-13"><a href="#cb19-13" tabindex="-1"></a>        then up <span class="sc">$</span><span class="dv">1</span><span class="sc">*</span>(<span class="fu">sqrt</span>(<span class="dv">3</span>)<span class="sc">/</span><span class="dv">2</span>) right <span class="sc">$</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span> \</span>
+<span id="cb19-14"><a href="#cb19-14" tabindex="-1"></a>        close color <span class="sc">$</span><span class="dv">3</span> fill <span class="sc">$</span><span class="dv">4</span></span>
+<span id="cb19-15"><a href="#cb19-15" tabindex="-1"></a>    text <span class="sc">$</span><span class="dv">2</span> at last .c color <span class="sc">$</span><span class="dv">5</span></span>
+<span id="cb19-16"><a href="#cb19-16" tabindex="-1"></a>}</span>
+<span id="cb19-17"><a href="#cb19-17" tabindex="-1"></a></span>
+<span id="cb19-18"><a href="#cb19-18" tabindex="-1"></a>define half_hex_up { </span>
+<span id="cb19-19"><a href="#cb19-19" tabindex="-1"></a>    A<span class="sc">:</span>line  down <span class="sc">$</span><span class="dv">1</span><span class="sc">*</span>(<span class="fu">sqrt</span>(<span class="dv">3</span>)<span class="sc">/</span><span class="dv">2</span>) left  <span class="sc">$</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span> \</span>
+<span id="cb19-20"><a href="#cb19-20" tabindex="-1"></a>        then left <span class="sc">$</span><span class="dv">1</span> \</span>
+<span id="cb19-21"><a href="#cb19-21" tabindex="-1"></a>        then up <span class="sc">$</span><span class="dv">1</span><span class="sc">*</span>(<span class="fu">sqrt</span>(<span class="dv">3</span>)<span class="sc">/</span><span class="dv">2</span>) left <span class="sc">$</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span> \</span>
+<span id="cb19-22"><a href="#cb19-22" tabindex="-1"></a>        close color <span class="sc">$</span><span class="dv">3</span> fill <span class="sc">$</span><span class="dv">4</span></span>
+<span id="cb19-23"><a href="#cb19-23" tabindex="-1"></a>    text <span class="sc">$</span><span class="dv">2</span> at last .c color <span class="sc">$</span><span class="dv">5</span></span>
+<span id="cb19-24"><a href="#cb19-24" tabindex="-1"></a>}</span>
+<span id="cb19-25"><a href="#cb19-25" tabindex="-1"></a></span>
+<span id="cb19-26"><a href="#cb19-26" tabindex="-1"></a>HD<span class="sc">:</span> [<span class="fu">half_hex_down</span>(lgt ,  <span class="st">"Rapid"</span>, <span class="dv">0x0070c0</span>, white, <span class="dv">0x0070c0</span>)]</span>
+<span id="cb19-27"><a href="#cb19-27" tabindex="-1"></a></span>
+<span id="cb19-28"><a href="#cb19-28" tabindex="-1"></a>HU<span class="sc">:</span> [<span class="fu">half_hex_up</span>(lgt ,  <span class="st">"Fuzz"</span> italic, <span class="dv">0x0070c0</span>, <span class="dv">0x0070c0</span>, white)] \</span>
+<span id="cb19-29"><a href="#cb19-29" tabindex="-1"></a>  with .n at .<span class="dv">0175</span> above HD.s </span></code></pre></div>
 <div class="container_pikchr inline-svg unnamed-chunk-19" style="text-align:center;">
-<svg style="width:500;height:;font-size:50%;font-family:Akronim;margin:10px 0 10px 0;" xmlns="http://www.w3.org/2000/svg" class="pikchr inline-svg  unnamed-chunk-19" viewbox="0 0 63.2448 60.84"><def><style type="text/css">@import url(https://fonts.googleapis.com/css2?family=Akronim:wght@400);</style></def><path d="M46.0224,4.08923L60.4224,29.0308L2.8224,29.0308L17.2224,4.08923Z" style="fill:rgb(255,255,255);stroke-width:1.44;stroke-linejoin:round;stroke:rgb(0,112,192);"></path><text lengthadjust="spacingAndGlyphs" x="31.6224" y="16.56" text-anchor="middle" fill="rgb(0,112,192)" dominant-baseline="central">Rapid</text><path d="M60.4224,31.8092L46.0224,56.7508L17.2224,56.7508L2.8224,31.8092Z" style="fill:rgb(0,112,192);stroke-width:1.44;stroke-linejoin:round;stroke:rgb(0,112,192);"></path><text x="31.6224" y="44.28" text-anchor="middle" font-style="italic" fill="rgb(255,255,255)" dominant-baseline="central">Fuzz</text></svg>
+<svg style="width:500;height:;font-size:50%;font-family:Akronim;margin:10px 0 10px 0;" xmlns="http://www.w3.org/2000/svg" class="pikchr inline-svg  unnamed-chunk-19" viewbox="0 0 64.6848 62.28"><def><style type="text/css">@import url(https://fonts.googleapis.com/css2?family=Akronim:wght@400);</style></def><path d="M46.7424,4.80923L61.1424,29.7508L3.5424,29.7508L17.9424,4.80923Z" style="fill:rgb(255,255,255);stroke-width:2.16;stroke-linejoin:round;stroke:rgb(0,112,192);"></path><text lengthadjust="spacingAndGlyphs" x="32.3424" y="17.28" text-anchor="middle" fill="rgb(0,112,192)" dominant-baseline="central">Rapid</text><path d="M61.1424,32.5292L46.7424,57.4708L17.9424,57.4708L3.5424,32.5292Z" style="fill:rgb(0,112,192);stroke-width:2.16;stroke-linejoin:round;stroke:rgb(0,112,192);"></path><text x="32.3424" y="45" text-anchor="middle" font-style="italic" fill="rgb(255,255,255)" dominant-baseline="central">Fuzz</text></svg>
+</div>
+</div>
+<div class="section level3">
+<h3 id="example-18">Example 18<a class="anchor" aria-label="anchor" href="#example-18"></a>
+</h3>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="sc">/</span><span class="er">*</span></span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a> Example <span class="fl">18.</span> André <span class="fu">Leite</span> (leite<span class="sc">@</span>castlab.org)</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a> <span class="sc">*</span><span class="er">/</span>  </span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a>lgt <span class="ot">=</span> .<span class="dv">2</span></span>
+<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" tabindex="-1"></a>define hex_up { </span>
+<span id="cb20-8"><a href="#cb20-8" tabindex="-1"></a>    A<span class="sc">:</span>line right <span class="sc">$</span><span class="dv">1</span><span class="sc">*</span>(<span class="fu">sqrt</span>(<span class="dv">3</span>)<span class="sc">/</span><span class="dv">2</span>) down <span class="sc">$</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span> \</span>
+<span id="cb20-9"><a href="#cb20-9" tabindex="-1"></a>        then down <span class="sc">$</span><span class="dv">1</span> \</span>
+<span id="cb20-10"><a href="#cb20-10" tabindex="-1"></a>        then down <span class="sc">$</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span> left <span class="sc">$</span><span class="dv">1</span><span class="sc">*</span>(<span class="fu">sqrt</span>(<span class="dv">3</span>)<span class="sc">/</span><span class="dv">2</span>) \</span>
+<span id="cb20-11"><a href="#cb20-11" tabindex="-1"></a>        then up <span class="sc">$</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span> left <span class="sc">$</span><span class="dv">1</span><span class="sc">*</span>(<span class="fu">sqrt</span>(<span class="dv">3</span>)<span class="sc">/</span><span class="dv">2</span>) \</span>
+<span id="cb20-12"><a href="#cb20-12" tabindex="-1"></a>        then up <span class="sc">$</span><span class="dv">1</span> \</span>
+<span id="cb20-13"><a href="#cb20-13" tabindex="-1"></a>        then right <span class="sc">$</span><span class="dv">1</span><span class="sc">*</span>(<span class="fu">sqrt</span>(<span class="dv">3</span>)<span class="sc">/</span><span class="dv">2</span>) up <span class="sc">$</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span> \</span>
+<span id="cb20-14"><a href="#cb20-14" tabindex="-1"></a>        close color <span class="sc">$</span><span class="dv">3</span> fill <span class="sc">$</span><span class="dv">4</span></span>
+<span id="cb20-15"><a href="#cb20-15" tabindex="-1"></a>    text <span class="sc">$</span><span class="dv">2</span> at last .c color <span class="sc">$</span><span class="dv">5</span></span>
+<span id="cb20-16"><a href="#cb20-16" tabindex="-1"></a>}</span>
+<span id="cb20-17"><a href="#cb20-17" tabindex="-1"></a></span>
+<span id="cb20-18"><a href="#cb20-18" tabindex="-1"></a>define hex_dgr {</span>
+<span id="cb20-19"><a href="#cb20-19" tabindex="-1"></a>   P<span class="sc">:</span>(<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb20-20"><a href="#cb20-20" tabindex="-1"></a>   C1<span class="sc">:</span> circle rad .<span class="dv">01</span> with .c at P.c thin color <span class="sc">$</span><span class="dv">2</span></span>
+<span id="cb20-21"><a href="#cb20-21" tabindex="-1"></a>   C2<span class="sc">:</span> circle rad .<span class="dv">01</span> with .c at C1.c <span class="sc">+</span> (<span class="sc">$</span><span class="dv">1</span><span class="sc">*</span>(<span class="fu">sqrt</span>(<span class="dv">3</span>)<span class="sc">/</span><span class="dv">2</span>), <span class="sc">-</span><span class="er">$</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>) thin color <span class="sc">$</span><span class="dv">2</span></span>
+<span id="cb20-22"><a href="#cb20-22" tabindex="-1"></a>   C3<span class="sc">:</span> circle rad .<span class="dv">01</span> with .c at C2.c <span class="sc">+</span> (<span class="dv">0</span>, <span class="sc">-</span><span class="er">$</span><span class="dv">1</span>) thin  color <span class="sc">$</span><span class="dv">2</span></span>
+<span id="cb20-23"><a href="#cb20-23" tabindex="-1"></a>   C4<span class="sc">:</span> circle rad .<span class="dv">01</span> with .c at C3.c <span class="sc">+</span> (<span class="sc">-</span><span class="er">$</span><span class="dv">1</span><span class="sc">*</span>(<span class="fu">sqrt</span>(<span class="dv">3</span>)<span class="sc">/</span><span class="dv">2</span>), <span class="sc">-</span><span class="er">$</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>) thin color <span class="sc">$</span><span class="dv">2</span></span>
+<span id="cb20-24"><a href="#cb20-24" tabindex="-1"></a>   C5<span class="sc">:</span> circle rad .<span class="dv">01</span> with .c at C4.c <span class="sc">+</span> (<span class="sc">-</span><span class="er">$</span><span class="dv">1</span><span class="sc">*</span>(<span class="fu">sqrt</span>(<span class="dv">3</span>)<span class="sc">/</span><span class="dv">2</span>), <span class="sc">$</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>) thin color <span class="sc">$</span><span class="dv">2</span></span>
+<span id="cb20-25"><a href="#cb20-25" tabindex="-1"></a>   C6<span class="sc">:</span> circle rad .<span class="dv">01</span> with .c at C5.c <span class="sc">+</span> (<span class="dv">0</span>, <span class="sc">$</span><span class="dv">1</span>) thin color <span class="sc">$</span><span class="dv">2</span></span>
+<span id="cb20-26"><a href="#cb20-26" tabindex="-1"></a>   L1<span class="sc">:</span> line from C1.se to C2.nw thin color <span class="sc">$</span><span class="dv">2</span></span>
+<span id="cb20-27"><a href="#cb20-27" tabindex="-1"></a>   L2<span class="sc">:</span> line from C2.s to C3.n thin color <span class="sc">$</span><span class="dv">2</span></span>
+<span id="cb20-28"><a href="#cb20-28" tabindex="-1"></a>   L3<span class="sc">:</span> line from C3.sw to C4.ne thin color <span class="sc">$</span><span class="dv">2</span></span>
+<span id="cb20-29"><a href="#cb20-29" tabindex="-1"></a>   L4<span class="sc">:</span> line from C4.nw to C5.se thin color <span class="sc">$</span><span class="dv">2</span></span>
+<span id="cb20-30"><a href="#cb20-30" tabindex="-1"></a>   L5<span class="sc">:</span> line from C5.n to C6.s thin color <span class="sc">$</span><span class="dv">2</span></span>
+<span id="cb20-31"><a href="#cb20-31" tabindex="-1"></a>   L6<span class="sc">:</span> line from C6.ne to C1.sw thin color <span class="sc">$</span><span class="dv">2</span></span>
+<span id="cb20-32"><a href="#cb20-32" tabindex="-1"></a>   </span>
+<span id="cb20-33"><a href="#cb20-33" tabindex="-1"></a>}</span>
+<span id="cb20-34"><a href="#cb20-34" tabindex="-1"></a></span>
+<span id="cb20-35"><a href="#cb20-35" tabindex="-1"></a></span>
+<span id="cb20-36"><a href="#cb20-36" tabindex="-1"></a>H2<span class="sc">:</span> [<span class="fu">hex_up</span>(lgt ,  <span class="st">"Pikchr"</span> small, <span class="dv">0x196F3D</span>, <span class="dv">0x27AE60</span>, white)]</span>
+<span id="cb20-37"><a href="#cb20-37" tabindex="-1"></a>H3<span class="sc">:</span> [<span class="fu">hex_dgr</span>(lgt<span class="sc">*</span>.<span class="dv">8</span>, <span class="dv">0x7DCEA0</span>)] with .c at H2.c</span>
+<span id="cb20-38"><a href="#cb20-38" tabindex="-1"></a>H4<span class="sc">:</span> [<span class="fu">hex_dgr</span>(lgt<span class="sc">*</span>.<span class="dv">6</span>, <span class="dv">0x52BE80</span>)] with .c at H2.c</span></code></pre></div>
+<div class="container_pikchr inline-svg unnamed-chunk-20" style="text-align:center;">
+<svg style="width:25%;height:auto;font-size:50%;font-family:MonteCarlo;margin:10px 0 10px 0;" xmlns="http://www.w3.org/2000/svg" class="pikchr inline-svg  unnamed-chunk-20" viewbox="0 0 59.2474 61.92"><def><style type="text/css">@import url(https://fonts.googleapis.com/css2?family=MonteCarlo:wght@400);</style></def><path d="M29.6237,2.16L54.5652,16.56L54.5652,45.36L29.6237,59.76L4.68215,45.36L4.68215,16.56L29.6237,2.16Z" style="fill:rgb(39,174,96);stroke-width:2.16;stroke-linejoin:round;stroke:rgb(25,111,61);"></path><text lengthadjust="spacingAndGlyphs" x="29.6237" y="30.96" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">Pikchr</text><circle cx="29.6237" cy="7.92" r="1.44" style="fill:none;stroke-width:1.4472;stroke:rgb(125,206,160);"></circle><circle cx="49.5769" cy="19.44" r="1.44" style="fill:none;stroke-width:1.4472;stroke:rgb(125,206,160);"></circle><circle cx="49.5769" cy="42.48" r="1.44" style="fill:none;stroke-width:1.4472;stroke:rgb(125,206,160);"></circle><circle cx="29.6237" cy="54" r="1.44" style="fill:none;stroke-width:1.4472;stroke:rgb(125,206,160);"></circle><circle cx="9.67045" cy="42.48" r="1.44" style="fill:none;stroke-width:1.4472;stroke:rgb(125,206,160);"></circle><circle cx="9.67045" cy="19.44" r="1.44" style="fill:none;stroke-width:1.4472;stroke:rgb(125,206,160);"></circle><path d="M30.6419,8.93823L48.5587,18.4218" style="fill:none;stroke-width:1.4472;stroke:rgb(125,206,160);"></path><path d="M49.5769,20.88L49.5769,41.04" style="fill:none;stroke-width:1.4472;stroke:rgb(125,206,160);"></path><path d="M48.5587,43.4982L30.6419,52.9818" style="fill:none;stroke-width:1.4472;stroke:rgb(125,206,160);"></path><path d="M28.6054,52.9818L10.6887,43.4982" style="fill:none;stroke-width:1.4472;stroke:rgb(125,206,160);"></path><path d="M9.67045,41.04L9.67045,20.88" style="fill:none;stroke-width:1.4472;stroke:rgb(125,206,160);"></path><path d="M10.6887,18.4218L28.6054,8.93823" style="fill:none;stroke-width:1.4472;stroke:rgb(125,206,160);"></path><circle cx="29.6237" cy="13.68" r="1.44" style="fill:none;stroke-width:1.4472;stroke:rgb(82,190,128);"></circle><circle cx="44.5886" cy="22.32" r="1.44" style="fill:none;stroke-width:1.4472;stroke:rgb(82,190,128);"></circle><circle cx="44.5886" cy="39.6" r="1.44" style="fill:none;stroke-width:1.4472;stroke:rgb(82,190,128);"></circle><circle cx="29.6237" cy="48.24" r="1.44" style="fill:none;stroke-width:1.4472;stroke:rgb(82,190,128);"></circle><circle cx="14.6588" cy="39.6" r="1.44" style="fill:none;stroke-width:1.4472;stroke:rgb(82,190,128);"></circle><circle cx="14.6588" cy="22.32" r="1.44" style="fill:none;stroke-width:1.4472;stroke:rgb(82,190,128);"></circle><path d="M30.6419,14.6982L43.5704,21.3018" style="fill:none;stroke-width:1.4472;stroke:rgb(82,190,128);"></path><path d="M44.5886,23.76L44.5886,38.16" style="fill:none;stroke-width:1.4472;stroke:rgb(82,190,128);"></path><path d="M43.5704,40.6182L30.6419,47.2218" style="fill:none;stroke-width:1.4472;stroke:rgb(82,190,128);"></path><path d="M28.6054,47.2218L15.677,40.6182" style="fill:none;stroke-width:1.4472;stroke:rgb(82,190,128);"></path><path d="M14.6588,38.16L14.6588,23.76" style="fill:none;stroke-width:1.4472;stroke:rgb(82,190,128);"></path><path d="M15.677,21.3018L28.6054,14.6982" style="fill:none;stroke-width:1.4472;stroke:rgb(82,190,128);"></path></svg>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
