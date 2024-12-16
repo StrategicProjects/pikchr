@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# pikchr <a href="https://monitoramento.sepe.pe.gov.br/pikchr/"><img src="man/figures/logo.png" align="right" height="139" alt="pikchr website" /></a>
+# pikchr <a href="https://github.com/StrategicProjects/pikchr"><img src="man/figures/logo.png" align="right" height="139" alt="pikchr website" /></a>
 
 <!-- badges: start -->
 
