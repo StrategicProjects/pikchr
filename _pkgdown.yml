@@ -6,7 +6,6 @@ template:
   package: tidytemplate
   bootstrap: 5
   bslib:
-
     #base_font: {google: "Roboto"}
     #heading_font: {google: "Roboto Slab"}
     #code_font: {google: "JetBrains Mono"}
@@ -14,6 +13,16 @@ template:
 #    navbar-background: '#e6f3fc'
 
   # custom footer for rmarkdown ecosystem
+includes:
+  in_header: |
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2QN6M1NPMX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2QN6M1NPMX');
+    </script>
 
 navbar:
   structure:
