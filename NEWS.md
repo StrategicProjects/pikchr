@@ -1,3 +1,7 @@
+# pikchr 1.0.2
+
+* Correct bug that generare false alerts of "NAs introduced by coercion". 
+
 # pikchr 1.0.1
 
 * updated `pikchr` source code to version 1.0

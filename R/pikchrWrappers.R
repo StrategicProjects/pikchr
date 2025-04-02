@@ -44,43 +44,47 @@ pikchr <- function(code,
                    css = NULL,
                    margin = NULL,
                    svgOnly = FALSE) {
+  
+
   code_clean <- stringr::str_replace_all(code, "\\\\*\\s*\\n\\s*then", " then")
   
   result <- .Call("pikchr_c", code_clean, class)
   
+  
   if (is.null(margin)) {
     margin = "10px 0 10px 0"
   }
-  
-  viewbox <- stringr::str_extract(result, "(?<=(viewBox=\")).*(?=(\">))")
+
+  viewbox <- stringr::str_extract(result, "(?<=(viewBox=\")).*?(?=(\"))")
+  print(viewbox)
   bbox <- as.numeric(stringr::str_split(viewbox, "\\s", simplify = TRUE))
   bbox_height <- bbox[4] - bbox[2]
   bbox_width <-  bbox[3] - bbox[1]
   
   if (is.null(width)) width <- bbox_width
   if (is.null(width)) width <- bbox_height
-  
-  styles  = paste0("style='width:", width, 
-                   ";height:", height, 
+
+  styles  = paste0("style='width:", width,
+                   ";height:", height,
                    ";font-size:", fontSize,
                    ";font-family:", fontFamily,
                    ";margin:", margin, ";")
   if (!is.null(css)) {
-    styles  = paste0(styles, css, "'") 
+    styles  = paste0(styles, css, "'")
   } else {
-    styles  = paste0(styles, "'") 
+    styles  = paste0(styles, "'")
   }
-  
-  result <- stringr::str_remove(result, pattern = "style='font-size:initial;'") 
+
+  result <- stringr::str_remove(result, pattern = "style='font-size:initial;'")
   result <- stringr::str_replace(result, pattern = "<svg",
-                                 replacement = paste0("<svg ", styles)) 
+                                 replacement = paste0("<svg ", styles))
   result <- stringr::str_replace(result, pattern = "<text",
-                                 replacement = "<text lengthAdjust=\"spacingAndGlyphs\" ") 
-  
+                                 replacement = "<text lengthAdjust=\"spacingAndGlyphs\" ")
+
   if (align != "none"){
     result <- paste0("<div class = \"container_", class, "\" style=\"text-align:", align, ';">', result, "</div>")
   }
-  
+
   #data("google_fonts", package =  "pikchr")
   font_styles <- google_fonts %>% dplyr::filter(family == fontFamily) %>% dplyr::pull	(styles)
   if (length(font_styles) == 1L) {
@@ -89,11 +93,13 @@ pikchr <- function(code,
   } else {
     if (fontFamily != "inherit") message("Google font not founded, check the spelling. Using inherit.")
   }
+  
+  rst <- htmltools::HTML(result)
 
   if (!svgOnly) {
-    return(htmltools::browsable(htmltools::tags$html(htmltools::HTML(result))))
+    return(htmltools::browsable(rst))
   } else
-    return(htmltools::HTML(result))
+    return(rst)
 }
 
 
