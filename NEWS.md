@@ -1,6 +1,14 @@
+# pikchr 1.0.3
+
+## Bug fix
+
+- Corrected automatic detection of LaTeX output: when knitting to PDF, the SVG diagram is now converted to a PNG image using the **`rsvg`** package, ensuring compatibility with LaTeX-based outputs.
+
 # pikchr 1.0.2
 
-* Correct bug that generare false alerts of "NAs introduced by coercion". 
+## Bug fix
+
+- Adjusted SVG attribute handling to prevent false "NAs introduced by coercion" warnings caused by unexpected coercion of non-numeric attributes.
 
 # pikchr 1.0.1
 

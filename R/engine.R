@@ -40,6 +40,7 @@
 eng_pikchr = function(options) {
   options <- eng_pikchr_validate_options(options)
   if (!options$eval) return(knitr::engine_output(options, options$code, ''))
+  
   echo <- options$echo
   width <- options$width
   height <- options$height
@@ -50,34 +51,97 @@ eng_pikchr = function(options) {
   class <- paste("inline-svg", options$class, options$label)
   margin <- options$margin
   lang <- options$lang
-  code <- paste0(options$code, collapse = " \n")
-  piksvg <- pikchr(code,
-                   width = width,
-                   height = height,
-                   fontSize = ifelse(is.null(size) | (size == "normalsize"), "100%", size),
-                   fontFamily = ifelse(is.null(family), "inherit", family),
-                   align = ifelse(is.null(align), "center", align),
-                   class = ifelse(is.null(class), "pikchr", paste("pikchr", class)),
-                   css = css, #ifelse(is.null(css), "", css),
-                   margin = ifelse(is.null(margin), "10px 0 10px 0", margin),
-                   svgOnly = TRUE
+  code <- paste0(options$code, collapse = "\n")
+  
+  if (knitr::is_latex_output()) align <- "none" 
+  
+  # Gera SVG com pikchr
+  piksvg <- pikchr(
+    code,
+    width = width,
+    height = height,
+    fontSize = ifelse(is.null(size) | (size == "normalsize"), "100%", size),
+    fontFamily = ifelse(is.null(family), "inherit", family),
+    align = ifelse(is.null(align), "center", align),
+    class = ifelse(is.null(class), "pikchr", paste("pikchr", class)),
+    css = css,
+    margin = ifelse(is.null(margin), "10px 0 10px 0", margin),
+    svgOnly = TRUE
   )
-
-
-  fig <- tempfile(fileext = ".svg")
-  brio::write_lines(piksvg, fig)
-
-  options$fig.num = 1L;
-  options$fig.cur = 1L
-  options$engine <- 'r'
-
+  
+  # Salva SVG temporário
+  svg_file <- tempfile(fileext = ".svg")
+  brio::write_lines(piksvg, svg_file)
+  
+  options$fig.num <- 1L
+  options$fig.cur <- 1L
+  options$engine <- "r"
+  
+  # Decide entre saída LaTeX (PDF) ou HTML
+  if (knitr::is_latex_output()) {
+    # Converte para PNG
+    png_file <- sub("\\.svg$", ".png", svg_file)
+    rsvg::rsvg_png(svg_file, png_file)
+    
+    final_png <- knitr::fig_path(".png", options)
+    dir.create(dirname(final_png), showWarnings = FALSE, recursive = TRUE)
+    file.copy(png_file, final_png, overwrite = TRUE)
+    
+    # Registra imagem como figura (e.g., para uso com knitr::include_graphics())
+    result <- run_hook_plot(final_png, options)
+  } else {
+    # HTML: retorna SVG embutido
+    result <- piksvg
+  }
+  
   if (echo)
     code <- options$code
   else
     code <- ''
-
-  knitr::engine_output(options, code, '', piksvg)
+  
+  knitr::engine_output(options, code, '', result)
 }
+# eng_pikchr = function(options) {
+#   options <- eng_pikchr_validate_options(options)
+#   if (!options$eval) return(knitr::engine_output(options, options$code, ''))
+#   echo <- options$echo
+#   width <- options$width
+#   height <- options$height
+#   size <- options$fontSize
+#   family <- options$fontFamily
+#   align <- options$align
+#   css <- options$css
+#   class <- paste("inline-svg", options$class, options$label)
+#   margin <- options$margin
+#   lang <- options$lang
+#   code <- paste0(options$code, collapse = " \n")
+#   piksvg <- pikchr(code,
+#                    width = width,
+#                    height = height,
+#                    fontSize = ifelse(is.null(size) | (size == "normalsize"), "100%", size),
+#                    fontFamily = ifelse(is.null(family), "inherit", family),
+#                    align = ifelse(is.null(align), "center", align),
+#                    class = ifelse(is.null(class), "pikchr", paste("pikchr", class)),
+#                    css = css, #ifelse(is.null(css), "", css),
+#                    margin = ifelse(is.null(margin), "10px 0 10px 0", margin),
+#                    svgOnly = TRUE
+#   )
+# 
+# 
+#   fig <- tempfile(fileext = ".svg")
+#   brio::write_lines(piksvg, fig)
+# 
+#   options$fig.num = 1L;
+#   options$fig.cur = 1L
+#   options$engine <- 'r'
+# 
+#   if (echo)
+#     code <- options$code
+#   else
+#     code <- ''
+# 
+#   knitr::engine_output(options, code, '', piksvg)
+# }
 
 
 #' Validate Knitr Chunk Options for Pikchr Engine

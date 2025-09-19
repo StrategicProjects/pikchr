@@ -56,7 +56,7 @@ pikchr <- function(code,
   }
 
   viewbox <- stringr::str_extract(result, "(?<=(viewBox=\")).*?(?=(\"))")
-  print(viewbox)
+  
   bbox <- as.numeric(stringr::str_split(viewbox, "\\s", simplify = TRUE))
   bbox_height <- bbox[4] - bbox[2]
   bbox_width <-  bbox[3] - bbox[1]
