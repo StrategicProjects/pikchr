@@ -6,12 +6,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>R Wrapper for pikchr (PIC) Diagram Language • pikchr</title>
-<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
-<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
+<!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="”image/svg+xml”" href="favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" sizes="any" href="favicon.ico">
+<link rel="manifest" href="site.webmanifest">
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
@@ -34,7 +33,7 @@
 
     <a class="navbar-brand me-2" href="index.html">pikchr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.0.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.0.3</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,7 +71,7 @@
 </h1>
 </div>
 <!-- badges: start -->
-<p><img src="https://www.r-pkg.org/badges/version/pikchr" alt="CRAN_Status_Badge">   <img src="https://cranlogs.r-pkg.org/badges/grand-total/pikchr" alt="CRAN Downloads">   <img src="https://img.shields.io/badge/devel%20version-1.0.0-blue.svg"><!-- badges: end --></p>
+<p><img src="https://www.r-pkg.org/badges/version/pikchr" alt="CRAN_Status_Badge">   <img src="https://cranlogs.r-pkg.org/badges/grand-total/pikchr" alt="CRAN Downloads">   <img src="https://img.shields.io/badge/devel%20version-1.0.4-blue.svg"><!-- badges: end --></p>
 <p>Welcome to the <code>pikchr</code> package website, an R interface for the <strong>PIC diagramming language</strong>, powered by the parser from <a href="https://pikchr.org" class="external-link uri">https://pikchr.org</a>. The <code>pikchr</code> package allows you to create diagrams directly within R, combining simplicity and precision for efficient diagram generation.</p>
 <p>With <code>pikchr</code>, you can produce complex diagrams for documentation, presentations, articles, and more, all from your R environment. The straightforward nature of the <strong>PIC language</strong>, paired with the power of R, makes this package a valuable tool for those needing precise, customizable visualizations in academic, technical, and scientific projects. Discover how <code>pikchr</code> can enhance and streamline your diagramming workflow!</p>
 <p>## Installation</p>
@@ -97,8 +96,7 @@
 <span>       height <span class="op">=</span> <span class="st">"auto"</span>,</span>
 <span>       fontSize <span class="op">=</span> <span class="st">'75%'</span>,</span>
 <span>       fontFamily <span class="op">=</span> <span class="st">"Flamenco"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/fig1.png"></p>
-<p>You can also use the <code>{pikchr}</code> engine in a <code>Rmarkdown</code> document.</p>
+<svg style="width:75%;height:auto;font-size:75%;font-family:Flamenco;margin:10px 0 10px 0;" xmlns="http://www.w3.org/2000/svg" class="pikchr" viewbox="0 0 409.075 177.12" data-pikchr-date="20250321215505"><def><style type="text/css">@import url(https://fonts.googleapis.com/css2?family=Flamenco:wght@300;400);</style></def><polygon points="146.16,27.36 134.64,31.68 134.64,23.04" style="fill:rgb(0,0,0)"></polygon><path d="M2.16,27.36L140.4,27.36" style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);"></path><text lengthadjust="spacingAndGlyphs" x="74.16" y="15.66" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">Rmarkdown</text><text x="74.16" y="39.06" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">Source</text><path d="M161.16,52.56L243.595,52.56A15 15 0 0 0 258.595 37.56L258.595,17.16A15 15 0 0 0 243.595 2.16L161.16,2.16A15 15 0 0 0 146.16 17.16L146.16,37.56A15 15 0 0 0 161.16 52.56Z" style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);"></path><text x="202.378" y="17.28" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">Rmarkdown</text><text x="202.378" y="37.44" text-anchor="middle" font-weight="bold" fill="rgb(0,0,0)" dominant-baseline="central">(knitr)</text><polygon points="402.595,27.36 391.075,31.68 391.075,23.04" style="fill:rgb(0,0,0)"></polygon><path d="M258.595,27.36L396.835,27.36" style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);"></path><text x="330.595" y="15.66" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">HTML+SVG</text><text x="330.595" y="39.06" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">Output</text><polygon points="202.378,52.56 206.698,64.08 198.058,64.08" style="fill:rgb(0,0,0)"></polygon><polygon points="202.378,124.56 198.058,113.04 206.698,113.04" style="fill:rgb(0,0,0)"></polygon><path d="M202.378,58.32L202.378,118.8" style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);"></path><path d="M167.076,174.96L237.68,174.96A15 15 0 0 0 252.68 159.96L252.68,139.56A15 15 0 0 0 237.68 124.56L167.076,124.56A15 15 0 0 0 152.076 139.56L152.076,159.96A15 15 0 0 0 167.076 174.96Z" style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);"></path><text x="202.378" y="139.68" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">Pikchr</text><text x="202.378" y="159.84" text-anchor="middle" font-weight="bold" fill="rgb(0,0,0)" dominant-baseline="central">(pikchr.c)</text></svg><p>You can also use the <code>{pikchr}</code> engine in a <code>Rmarkdown</code> document.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>```{pikchr}</span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>#| width: 50%</span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>#| height: auto</span>
@@ -115,7 +113,8 @@
 <span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>box same "Pikchr" "(pikchr.c)" fit fill 0xF4D35E</span>
 <span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>```</span></code></pre></div>
 <div class="container_pikchr inline-svg unnamed-chunk-5" style="text-align:center;">
-<p><img src="reference/figures/fig2.png"></p>
+<svg style="width:50%;height:auto;font-size:14;font-family:Jost;margin:10px 0 10px 0;" xmlns="http://www.w3.org/2000/svg" class="pikchr inline-svg  unnamed-chunk-5" viewbox="0 0 409.075 177.12" data-pikchr-date="20250321215505"><def><style type="text/css">@import
+url(<https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900>);</style></def><polygon points="146.16,27.36 134.64,31.68 134.64,23.04" style="fill:rgb(0,0,0)"></polygon><path d="M2.16,27.36L140.4,27.36" style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);"></path><text lengthadjust="spacingAndGlyphs" x="74.16" y="15.66" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">Rmarkdown</text><text x="74.16" y="39.06" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">Source</text><path d="M161.16,52.56L243.595,52.56A15 15 0 0 0 258.595 37.56L258.595,17.16A15 15 0 0 0 243.595 2.16L161.16,2.16A15 15 0 0 0 146.16 17.16L146.16,37.56A15 15 0 0 0 161.16 52.56Z" style="fill:rgb(238,150,75);stroke-width:2.16;stroke:rgb(0,0,0);"></path><text x="202.378" y="17.28" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">Rmarkdown</text><text x="202.378" y="37.44" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">(knitr)</text><polygon points="402.595,27.36 391.075,31.68 391.075,23.04" style="fill:rgb(0,0,0)"></polygon><path d="M258.595,27.36L396.835,27.36" style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);"></path><text x="330.595" y="15.66" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">HTML+SVG</text><text x="330.595" y="39.06" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">Output</text><polygon points="202.378,52.56 206.698,64.08 198.058,64.08" style="fill:rgb(0,0,0)"></polygon><polygon points="202.378,124.56 198.058,113.04 206.698,113.04" style="fill:rgb(0,0,0)"></polygon><path d="M202.378,58.32L202.378,118.8" style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);"></path><path d="M171.125,174.96L233.63,174.96A15 15 0 0 0 248.63 159.96L248.63,139.56A15 15 0 0 0 233.63 124.56L171.125,124.56A15 15 0 0 0 156.125 139.56L156.125,159.96A15 15 0 0 0 171.125 174.96Z" style="fill:rgb(244,211,94);stroke-width:2.16;stroke:rgb(0,0,0);"></path><text x="202.378" y="139.68" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">Pikchr</text><text x="202.378" y="159.84" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">(pikchr.c)</text></svg>
 </div>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>lgt <span class="ot">=</span> .<span class="dv">2</span></span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a></span>
@@ -152,7 +151,8 @@
 <span id="cb4-33"><a href="#cb4-33" tabindex="-1"></a>H3<span class="sc">:</span> [<span class="fu">hex_dgr</span>(lgt<span class="sc">*</span>.<span class="dv">8</span>, <span class="dv">0x7DCEA0</span>)] with .c at H2.c</span>
 <span id="cb4-34"><a href="#cb4-34" tabindex="-1"></a>H4<span class="sc">:</span> [<span class="fu">hex_dgr</span>(lgt<span class="sc">*</span>.<span class="dv">6</span>, <span class="dv">0x52BE80</span>)] with .c at H2.c</span></code></pre></div>
 <div class="container_pikchr inline-svg unnamed-chunk-6" style="text-align:center;">
-<p><img src="reference/figures/fig3.png"></p>
+<svg style="width:25%;height:auto;font-size:50%;font-family:MonteCarlo;margin:10px 0 10px 0;" xmlns="http://www.w3.org/2000/svg" class="pikchr inline-svg  unnamed-chunk-6" viewbox="0 0 59.2474 61.92" data-pikchr-date="20250321215505"><def><style type="text/css">@import
+url(<https://fonts.googleapis.com/css2?family=MonteCarlo:wght@400>);</style></def><path d="M29.6237,2.16L54.5652,16.56L54.5652,45.36L29.6237,59.76L4.68215,45.36L4.68215,16.56L29.6237,2.16Z" style="fill:rgb(39,174,96);stroke-width:2.16;stroke-linejoin:round;stroke:rgb(25,111,61);"></path><text lengthadjust="spacingAndGlyphs" x="29.6237" y="30.96" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">Pikchr</text><circle cx="29.6237" cy="7.92" r="1.44" style="fill:none;stroke-width:1.4472;stroke:rgb(125,206,160);"></circle><circle cx="49.5769" cy="19.44" r="1.44" style="fill:none;stroke-width:1.4472;stroke:rgb(125,206,160);"></circle><circle cx="49.5769" cy="42.48" r="1.44" style="fill:none;stroke-width:1.4472;stroke:rgb(125,206,160);"></circle><circle cx="29.6237" cy="54" r="1.44" style="fill:none;stroke-width:1.4472;stroke:rgb(125,206,160);"></circle><circle cx="9.67045" cy="42.48" r="1.44" style="fill:none;stroke-width:1.4472;stroke:rgb(125,206,160);"></circle><circle cx="9.67045" cy="19.44" r="1.44" style="fill:none;stroke-width:1.4472;stroke:rgb(125,206,160);"></circle><path d="M30.6419,8.93823L48.5587,18.4218" style="fill:none;stroke-width:1.4472;stroke:rgb(125,206,160);"></path><path d="M49.5769,20.88L49.5769,41.04" style="fill:none;stroke-width:1.4472;stroke:rgb(125,206,160);"></path><path d="M48.5587,43.4982L30.6419,52.9818" style="fill:none;stroke-width:1.4472;stroke:rgb(125,206,160);"></path><path d="M28.6054,52.9818L10.6887,43.4982" style="fill:none;stroke-width:1.4472;stroke:rgb(125,206,160);"></path><path d="M9.67045,41.04L9.67045,20.88" style="fill:none;stroke-width:1.4472;stroke:rgb(125,206,160);"></path><path d="M10.6887,18.4218L28.6054,8.93823" style="fill:none;stroke-width:1.4472;stroke:rgb(125,206,160);"></path><circle cx="29.6237" cy="13.68" r="1.44" style="fill:none;stroke-width:1.4472;stroke:rgb(82,190,128);"></circle><circle cx="44.5886" cy="22.32" r="1.44" style="fill:none;stroke-width:1.4472;stroke:rgb(82,190,128);"></circle><circle cx="44.5886" cy="39.6" r="1.44" style="fill:none;stroke-width:1.4472;stroke:rgb(82,190,128);"></circle><circle cx="29.6237" cy="48.24" r="1.44" style="fill:none;stroke-width:1.4472;stroke:rgb(82,190,128);"></circle><circle cx="14.6588" cy="39.6" r="1.44" style="fill:none;stroke-width:1.4472;stroke:rgb(82,190,128);"></circle><circle cx="14.6588" cy="22.32" r="1.44" style="fill:none;stroke-width:1.4472;stroke:rgb(82,190,128);"></circle><path d="M30.6419,14.6982L43.5704,21.3018" style="fill:none;stroke-width:1.4472;stroke:rgb(82,190,128);"></path><path d="M44.5886,23.76L44.5886,38.16" style="fill:none;stroke-width:1.4472;stroke:rgb(82,190,128);"></path><path d="M43.5704,40.6182L30.6419,47.2218" style="fill:none;stroke-width:1.4472;stroke:rgb(82,190,128);"></path><path d="M28.6054,47.2218L15.677,40.6182" style="fill:none;stroke-width:1.4472;stroke:rgb(82,190,128);"></path><path d="M14.6588,38.16L14.6588,23.76" style="fill:none;stroke-width:1.4472;stroke:rgb(82,190,128);"></path><path d="M15.677,21.3018L28.6054,14.6982" style="fill:none;stroke-width:1.4472;stroke:rgb(82,190,128);"></path></svg>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
@@ -180,8 +180,8 @@
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Andre Leite <br><small class="roles"> Author, maintainer </small>  </li>
-<li>Hugo Vaconcelos <br><small class="roles"> Author </small>  </li>
+<li>Andre Leite <br><small class="roles"> Author, maintainer </small>   </li>
+<li>Hugo Vaconcelos <br><small class="roles"> Author </small>   </li>
 <li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
