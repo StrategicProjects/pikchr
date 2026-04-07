@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">pikchr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.0.3</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.1.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,11 +33,36 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>Changelog</h1>
-
+      <small>Source: <a href="https://github.com/StrategicProjects/pikchr/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="1.0.3" id="pikchr-103">pikchr 1.0.3<a class="anchor" aria-label="anchor" href="#pikchr-103"></a></h2>
+<h2 class="pkg-version" data-toc-text="1.1.0" id="pikchr-110">pikchr 1.1.0<a class="anchor" aria-label="anchor" href="#pikchr-110"></a></h2>
+<div class="section level3">
+<h3 id="new-features-1-1-0">New features<a class="anchor" aria-label="anchor" href="#new-features-1-1-0"></a></h3>
+<ul><li>
+<strong>Quarto and RMarkdown improvements</strong>: The knitr engine now supports <code>fig.cap</code> (figure captions with <code>&lt;figure&gt;</code>/<code>&lt;figcaption&gt;</code> in HTML), <code>fig.alt</code> (accessibility alt text via <code>aria-label</code>), and <code>fig.align</code> as standard knitr options.</li>
+<li>
+<strong>Non-HTML output support</strong>: Automatic PNG conversion for all non-HTML formats including DOCX, EPUB, and Typst (previously only LaTeX/PDF was supported).</li>
+<li>
+<strong>DPI-aware PNG conversion</strong>: The <code>dpi</code> chunk option (default 150) controls PNG resolution for non-HTML outputs.</li>
+<li>
+<strong>Error detection</strong>: Pikchr compilation errors now produce informative warnings with the error message, instead of silently embedding invalid markup.</li>
+<li>
+<strong>Quarto cross-referencing</strong>: Chunks with labels starting with <code>fig-</code> receive an HTML <code>id</code> attribute for Quarto cross-reference compatibility.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="improvements-1-1-0">Improvements<a class="anchor" aria-label="anchor" href="#improvements-1-1-0"></a></h3>
+<ul><li>Replaced <code><a href="https://rdrr.io/r/base/message.html" class="external-link">message()</a></code>, <code><a href="https://rdrr.io/r/base/warning.html" class="external-link">warning()</a></code>, and <code><a href="https://rdrr.io/r/base/stop.html" class="external-link">stop()</a></code> with <code><a href="https://cli.r-lib.org/reference/cli_abort.html" class="external-link">cli::cli_inform()</a></code>, <code><a href="https://cli.r-lib.org/reference/cli_abort.html" class="external-link">cli::cli_warn()</a></code>, and <code><a href="https://cli.r-lib.org/reference/cli_abort.html" class="external-link">cli::cli_abort()</a></code> for consistent and user-friendly messaging.</li>
+<li>Removed <code>dplyr</code>, <code>purrr</code>, and <code>rlang</code> from Imports, replaced with base R operations for a lighter dependency footprint.</li>
+<li>Replaced <code>tidyverse</code> in Suggests with specific packages (<code>rmarkdown</code>).</li>
+<li>Updated authors list.</li>
+<li>Removed compiled objects (<code>.o</code>, <code>.so</code>) from <code>src/</code>.</li>
+<li>Cleaned up commented-out code and removed duplicate engine registration.</li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.0.3" id="pikchr-103">pikchr 1.0.3<a class="anchor" aria-label="anchor" href="#pikchr-103"></a></h2><p class="text-muted">CRAN release: 2025-09-19</p>
 <div class="section level3">
 <h3 id="bug-fix-1-0-3">Bug fix<a class="anchor" aria-label="anchor" href="#bug-fix-1-0-3"></a></h3>
 <ul><li>Corrected automatic detection of LaTeX output: when knitting to PDF, the SVG diagram is now converted to a PNG image using the <strong><code>rsvg</code></strong> package, ensuring compatibility with LaTeX-based outputs.</li>
