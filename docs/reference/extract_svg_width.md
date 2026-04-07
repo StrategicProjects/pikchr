@@ -1,7 +1,7 @@
 # Extract SVG intrinsic width from viewBox
 
-Parses the \`viewBox\` attribute from an SVG string and returns the
-width in user units (typically px at 72 dpi).
+Parses the `viewBox` attribute from an SVG string and returns the width
+in user units (typically px at 72 dpi).
 
 ## Usage
 
@@ -17,4 +17,4 @@ extract_svg_width(svg_string)
 
 ## Value
 
-Numeric width or \`NULL\` if not found.
+Numeric width or `NULL` if not found.

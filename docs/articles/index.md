@@ -2,6 +2,6 @@
 
 ### All vignettes
 
-- [Examples](https://monitoramento.sepe.pe.gov.br/pikchr/articles/Examples.md):
+- [Examples](https://strategicprojects.github.io/pikchr/articles/Examples.md):
 - [Pikchr User
-  Manual](https://monitoramento.sepe.pe.gov.br/pikchr/articles/userman.md):
+  Manual](https://strategicprojects.github.io/pikchr/articles/userman.md):

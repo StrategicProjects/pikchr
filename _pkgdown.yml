@@ -1,54 +1,24 @@
-url: https://monitoramento.sepe.pe.gov.br/pikchr/
+url: https://strategicprojects.github.io/pikchr/
 template:
-  light-switch: false
-  dark-mode: false
-  trailing_slash_redirect: true
-  package: tidytemplate
   bootstrap: 5
+  bootswatch: flatly
   bslib:
-    #base_font: {google: "Roboto"}
-    #heading_font: {google: "Roboto Slab"}
-    #code_font: {google: "JetBrains Mono"}
-#    primary: '#096B72'
-#    navbar-background: '#e6f3fc'
-
-  # custom footer for rmarkdown ecosystem
-includes:
-  in_header: |
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2QN6M1NPMX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2QN6M1NPMX');
-    </script>
-
+    base_font: {google: "Jost"}
+    heading_font: {google: "Jost"}
+    code_font: {google: "JetBrains Mono"}
+  includes:
+    in_header: |
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Flamenco:wght@300;400&family=Jost:ital,wght@0,100..900;1,100..900&family=MonteCarlo&family=Abel&display=swap" rel="stylesheet">
 navbar:
   structure:
+    left: [articles, reference, tutorials, news]
     right: [search, github]
   components:
     github:
       icon: fa-github
       href: https://github.com/StrategicProjects/pikchr
-      aria-label: Github
-# navbar:
-#   structure:
-#     left:  [intro, reference]
-#     right: [search, github, lightswitch]
-
-footer:
-  structure:
-    left: [rmd]
-    right: [developed_by]
-  components:
-      #p: "\n\n"
-      rmd: |
-        **pikchr** is part of an ecosystem of R packages for data analysis and
-        computational document processing<br>developed at the [Secretaria Executiva
-        de Monitoramento Estratégico](https://monitoramento.sepe.pe.gov.br).
-      developed_by: |
-        Developed by André Leite and Hugo Medeiros.
-
-development:
-  mode: auto
+      aria_label: GitHub
+home:
+  title: pikchr - R Wrapper for PIC Diagram Language

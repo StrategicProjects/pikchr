@@ -4,7 +4,7 @@ pkgdown_sha: ~
 articles:
   Examples: Examples.html
   userman: userman.html
-last_built: 2026-04-07T18:41Z
+last_built: 2026-04-07T19:16Z
 urls:
-  reference: https://monitoramento.sepe.pe.gov.br/pikchr/reference
-  article: https://monitoramento.sepe.pe.gov.br/pikchr/articles
+  reference: https://strategicprojects.github.io/pikchr/reference
+  article: https://strategicprojects.github.io/pikchr/articles

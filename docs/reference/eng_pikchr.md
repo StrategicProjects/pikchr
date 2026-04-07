@@ -97,5 +97,5 @@ Pikchr-specific options:
 
 ## See also
 
-[`pikchr`](https://monitoramento.sepe.pe.gov.br/pikchr/reference/pikchr.md),
+[`pikchr`](https://strategicprojects.github.io/pikchr/reference/pikchr.md),
 [`knit_engines`](https://rdrr.io/pkg/knitr/man/knit_engines.html)

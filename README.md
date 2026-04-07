@@ -1,13 +1,14 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# pikchr <a href="https://github.com/StrategicProjects/pikchr"><img src="man/figures/logo.png" align="right" height="139" alt="pikchr website" /></a>
+# pikchr <a href="https://strategicprojects.github.io/pikchr/"><img src="man/figures/logo.png" align="right" height="139" alt="pikchr website" /></a>
 
 <!-- badges: start -->
 
 ![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/pikchr)  
 ![CRAN Downloads](https://cranlogs.r-pkg.org/badges/grand-total/pikchr)
-  ![](https://img.shields.io/badge/devel%20version-1.1.0-blue.svg)
+  ![Devel
+Badge](https://img.shields.io/badge/devel%20version-1.1.0-blue.svg)
 <!-- badges: end -->
 
 Welcome to the `pikchr` package website, an R interface for the **PIC
@@ -56,7 +57,11 @@ box same "Pikchr" "(pikchr.c)" bold fit
        fontFamily = "Flamenco")
 ```
 
-<svg style='width:75%;height:auto;font-size:75%;font-family:Flamenco;margin:10px 0 10px 0;' xmlns='http://www.w3.org/2000/svg'  class="pikchr" viewBox="0 0 409.075 177.12" data-pikchr-date="20250321215505"><def><style type="text/css">@import url(https://fonts.googleapis.com/css2?family=Flamenco:wght@300;400);</style></def>
+<div class="container_inline-svg pikchr unnamed-chunk-3"
+style="text-align:default;">
+
+<svg style="width:75%;height:;font-size:75%;font-family:Flamenco;margin:10px 0 10px 0;" xmlns="http://www.w3.org/2000/svg" class="inline-svg pikchr unnamed-chunk-3" viewBox="0 0 409.075 177.12" data-pikchr-date="20250321215505">
+
 <polygon points="146.16,27.36 134.64,31.68 134.64,23.04" style="fill:rgb(0,0,0)"/>
 <path d="M2.16,27.36L140.4,27.36"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
 <text lengthAdjust="spacingAndGlyphs"  x="74.16" y="15.66" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">Rmarkdown</text>
@@ -76,7 +81,10 @@ box same "Pikchr" "(pikchr.c)" bold fit
 <text x="202.378" y="159.84" text-anchor="middle" font-weight="bold" fill="rgb(0,0,0)" dominant-baseline="central">(pikchr.c)</text>
 </svg>
 
-You can also use the `{pikchr}` engine in a `Rmarkdown` document.
+</div>
+
+You can also use the `{pikchr}` engine in **RMarkdown** or **Quarto**
+documents. It supports chunk options via the `#|` YAML syntax:
 
 ```` default
 ```{pikchr}
@@ -85,6 +93,8 @@ You can also use the `{pikchr}` engine in a `Rmarkdown` document.
 #| align: center
 #| fontSize: 14
 #| fontFamily: Jost
+#| fig.cap: "A pikchr diagram"
+#| fig.alt: "Diagram showing the RMarkdown to HTML+SVG pipeline"
 /*
   basic example code in a markdown chunk.
 */
@@ -96,13 +106,11 @@ box same "Pikchr" "(pikchr.c)" fit fill 0xF4D35E
 ```
 ````
 
-<div class="container_pikchr inline-svg unnamed-chunk-5"
+<div class="container_inline-svg pikchr unnamed-chunk-5"
 style="text-align:center;">
 
-<svg style="width:50%;height:auto;font-size:14;font-family:Jost;margin:10px 0 10px 0;" xmlns="http://www.w3.org/2000/svg" class="pikchr inline-svg  unnamed-chunk-5" viewBox="0 0 409.075 177.12" data-pikchr-date="20250321215505">
+<svg style="width:50%;height:auto;font-size:14;font-family:Jost;margin:10px 0 10px 0;" xmlns="http://www.w3.org/2000/svg" class="inline-svg pikchr unnamed-chunk-5" viewBox="0 0 409.075 177.12" data-pikchr-date="20250321215505">
 
-<def><style type="text/css">@import
-url(<https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900>);</style></def>
 <polygon points="146.16,27.36 134.64,31.68 134.64,23.04" style="fill:rgb(0,0,0)"/>
 <path d="M2.16,27.36L140.4,27.36"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
 <text lengthAdjust="spacingAndGlyphs"  x="74.16" y="15.66" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">Rmarkdown</text>
@@ -161,13 +169,11 @@ H3: [hex_dgr(lgt*.8, 0x7DCEA0)] with .c at H2.c
 H4: [hex_dgr(lgt*.6, 0x52BE80)] with .c at H2.c
 ```
 
-<div class="container_pikchr inline-svg unnamed-chunk-6"
+<div class="container_inline-svg pikchr unnamed-chunk-6"
 style="text-align:center;">
 
-<svg style="width:25%;height:auto;font-size:50%;font-family:MonteCarlo;margin:10px 0 10px 0;" xmlns="http://www.w3.org/2000/svg" class="pikchr inline-svg  unnamed-chunk-6" viewBox="0 0 59.2474 61.92" data-pikchr-date="20250321215505">
+<svg style="width:25%;height:auto;font-size:50%;font-family:MonteCarlo;margin:10px 0 10px 0;" xmlns="http://www.w3.org/2000/svg" class="inline-svg pikchr unnamed-chunk-6" viewBox="0 0 59.2474 61.92" data-pikchr-date="20250321215505">
 
-<def><style type="text/css">@import
-url(<https://fonts.googleapis.com/css2?family=MonteCarlo:wght@400>);</style></def>
 <path d="M29.6237,2.16L54.5652,16.56L54.5652,45.36L29.6237,59.76L4.68215,45.36L4.68215,16.56L29.6237,2.16Z"  style="fill:rgb(39,174,96);stroke-width:2.16;stroke-linejoin:round;stroke:rgb(25,111,61);" />
 <text lengthAdjust="spacingAndGlyphs"  x="29.6237" y="30.96" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">Pikchr</text>
 <circle cx="29.6237" cy="7.92" r="1.44"  style="fill:none;stroke-width:1.4472;stroke:rgb(125,206,160);" />

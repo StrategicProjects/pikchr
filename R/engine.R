@@ -145,9 +145,15 @@ eng_pikchr <- function(options) {
     dir.create(dirname(final_png), showWarnings = FALSE, recursive = TRUE)
     file.copy(png_file, final_png, overwrite = TRUE)
 
-    # Apply out.width default if not set
-    if (is.null(options$out.width)) {
+    # For non-HTML markdown formats (e.g. github_document), out.width with
+    # percentages and fig.align generate HTML tags which may not be desired.
+    # Only set defaults for LaTeX/PDF where they map to LaTeX commands.
+    if (is.null(options$out.width) && knitr::is_latex_output()) {
       options$out.width <- if (is.null(options$width)) "100%" else options$width
+    }
+    if (!knitr::is_latex_output() && !knitr::is_html_output()) {
+      options$out.width <- NULL
+      options$fig.align <- "default"
     }
 
     result <- run_hook_plot(final_png, options)

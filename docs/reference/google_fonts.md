@@ -10,7 +10,9 @@ google_fonts
 
 ## Format
 
-\## \`google_fonts\` A data frame with 1,718 rows and 2 columns:
+### `google_fonts`
+
+A data frame with 1,718 rows and 2 columns:
 
 - family:
 
@@ -22,4 +24,4 @@ google_fonts
 
 ## Source
 
-\<https://fonts.google.com\>
+<https://fonts.google.com>

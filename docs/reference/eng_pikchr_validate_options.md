@@ -1,8 +1,8 @@
 # Validate Knitr Chunk Options for Pikchr Engine
 
 Validates chunk options provided to the Pikchr engine. Numeric values
-for logical options (\`eval\`, \`echo\`, \`warning\`) are converted to
-\`TRUE\` with a warning.
+for logical options (`eval`, `echo`, `warning`) are converted to `TRUE`
+with a warning.
 
 ## Usage
 
