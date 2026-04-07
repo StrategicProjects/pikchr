@@ -19,7 +19,6 @@ A data frame with 1,718 rows and 2 columns:
 google_fonts
 }
 \description{
-List of fonts and its stytles on google fonts site.
-Report ...
+List of fonts and their styles on the Google Fonts site.
 }
 \keyword{datasets}

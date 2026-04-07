@@ -7,20 +7,15 @@
 run_hook_plot(x, options)
 }
 \arguments{
-\item{x}{A character string representing the path to the plot file.}
+\item{x}{Character path to the plot file.}
 
-\item{options}{A list of options associated with the Knitr chunk, such as plot settings and output options.}
+\item{options}{Knitr chunk options list.}
 }
 \value{
-The result of calling the current Knitr plot hook with the specified plot file and options.
+The result of calling the knitr plot hook.
 }
 \description{
-This function records the filenames of plot outputs (such as SVG or PNG files) in the Knitr environment 
-and then runs the appropriate plot hook to display or save the plots.
-}
-\details{
-The `run_hook_plot` function appends the plot file path to the internal Knitr option `plot_files`. 
-It then retrieves the current plot hook defined in `knit_hooks` and calls it to handle the plot rendering or output. 
-This function is particularly useful for handling plots generated from both R code and other outputs like HTML widgets.
+Records the filename of a plot output in the knitr environment and runs the
+current plot hook. Used internally for non-HTML outputs (LaTeX, DOCX, etc.).
 }
 \keyword{internal}

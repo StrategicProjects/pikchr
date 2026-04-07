@@ -16,7 +16,6 @@ knitr::opts_chunk$set(
 
 ```{r setup, echo=FALSE, message=FALSE}
 library(knitr)
-library(tidyverse)
 library(kableExtra)
 library(pikchr)
 ```
@@ -624,11 +623,12 @@ layout direction that is current when the object is created.
 
 ```{r}
 #| echo: false
-tibble(
+kable_paper(kbl(data.frame(
   `Layout Direction` = c('right', 'down', 'left', 'up'),
   `.start` = c('.w', '.n', '.e', '.s'),
-  `.end`  = c('.e', '.s', '.w', '.n')
-) %>% kbl() %>% kable_paper(full_width = FALSE)
+  `.end`  = c('.e', '.s', '.w', '.n'),
+  check.names = FALSE
+)), full_width = FALSE)
 ```
 
 Recall the earlier example that consisted of three objects stacked

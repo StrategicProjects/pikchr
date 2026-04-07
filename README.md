@@ -7,7 +7,7 @@
 
 ![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/pikchr)  
 ![CRAN Downloads](https://cranlogs.r-pkg.org/badges/grand-total/pikchr)
-  ![](https://img.shields.io/badge/devel%20version-1.0.4-blue.svg)
+  ![](https://img.shields.io/badge/devel%20version-1.1.0-blue.svg)
 <!-- badges: end -->
 
 Welcome to the `pikchr` package website, an R interface for the **PIC
@@ -20,8 +20,12 @@ presentations, articles, and more, all from your R environment. The
 straightforward nature of the **PIC language**, paired with the power of
 R, makes this package a valuable tool for those needing precise,
 customizable visualizations in academic, technical, and scientific
-projects. Discover how `pikchr` can enhance and streamline your
-diagramming workflow!
+projects.
+
+The `{pikchr}` knitr engine works seamlessly with both **RMarkdown** and
+**Quarto** documents, supporting all output formats: HTML, PDF (LaTeX),
+Word (DOCX), EPUB, Typst, and more. It also supports standard knitr
+features like `fig.cap`, `fig.alt`, `fig.align`, and `dpi`.
 
 \## Installation
 

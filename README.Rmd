@@ -19,13 +19,15 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 ![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/pikchr) &nbsp; 
 ![CRAN Downloads](https://cranlogs.r-pkg.org/badges/grand-total/pikchr) &nbsp; 
-![](https://img.shields.io/badge/devel%20version-1.0.4-blue.svg)
+![](https://img.shields.io/badge/devel%20version-1.1.0-blue.svg)
 <!-- badges: end -->
   
   
   Welcome to the `pikchr` package website, an R interface for the **PIC diagramming language**, powered by the parser from <https://pikchr.org>. The `pikchr` package allows you to create diagrams directly within R, combining simplicity and precision for efficient diagram generation.
 
-With `pikchr`, you can produce complex diagrams for documentation, presentations, articles, and more, all from your R environment. The straightforward nature of the **PIC language**, paired with the power of R, makes this package a valuable tool for those needing precise, customizable visualizations in academic, technical, and scientific projects. Discover how `pikchr` can enhance and streamline your diagramming workflow!
+With `pikchr`, you can produce complex diagrams for documentation, presentations, articles, and more, all from your R environment. The straightforward nature of the **PIC language**, paired with the power of R, makes this package a valuable tool for those needing precise, customizable visualizations in academic, technical, and scientific projects. 
+
+The `{pikchr}` knitr engine works seamlessly with both **RMarkdown** and **Quarto** documents, supporting all output formats: HTML, PDF (LaTeX), Word (DOCX), EPUB, Typst, and more. It also supports standard knitr features like `fig.cap`, `fig.alt`, `fig.align`, and `dpi`.
   
   ## Installation
   
@@ -76,7 +78,7 @@ box same "Pikchr" "(pikchr.c)" bold fit
 ```
 
 
-You can also use the `{pikchr}` engine in a `Rmarkdown` document.
+You can also use the `{pikchr}` engine in **RMarkdown** or **Quarto** documents. It supports chunk options via the `#|` YAML syntax:
 
 ````{verbatim}
 ```{pikchr}
@@ -85,6 +87,8 @@ You can also use the `{pikchr}` engine in a `Rmarkdown` document.
 #| align: center
 #| fontSize: 14
 #| fontFamily: Jost
+#| fig.cap: "A pikchr diagram"
+#| fig.alt: "Diagram showing the RMarkdown to HTML+SVG pipeline"
 /*
   basic example code in a markdown chunk.
 */

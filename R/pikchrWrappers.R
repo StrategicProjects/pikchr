@@ -30,7 +30,6 @@
 #' @import utils
 #' @import stringr
 #' @import rsvg
-#' @import dplyr
 #' @importFrom stringr str_replace
 #' @importFrom htmltools HTML tags browsable
 #' @export 
@@ -85,13 +84,26 @@ pikchr <- function(code,
     result <- paste0("<div class = \"container_", class, "\" style=\"text-align:", align, ';">', result, "</div>")
   }
 
-  #data("google_fonts", package =  "pikchr")
-  font_styles <- google_fonts %>% dplyr::filter(family == fontFamily) %>% dplyr::pull	(styles)
+  font_styles <- google_fonts$styles[google_fonts$family == fontFamily]
+  
   if (length(font_styles) == 1L) {
-    result <- stringr::str_replace(result, pattern = "(<svg.*?>)",
-                                   replacement = paste0("\\1", '<def><style type="text/css">@import url(https://fonts.googleapis.com/css2?family=', stringr::str_replace_all(fontFamily, "\\s", "+"), font_styles, ');</style></def>'))
+    font_url <- paste0(
+      "https://fonts.googleapis.com/css2?family=",
+      stringr::str_replace_all(fontFamily, "\\s", "+"),
+      font_styles
+    )
+    font_css <- paste0(
+      '<defs><style type="text/css">',
+      '@import url(', font_url, ');',
+      '</style></defs>'
+    )
+    result <- stringr::str_replace(
+      result,
+      pattern = "(<svg[^>]*>)",
+      replacement = paste0("\\1", font_css)
+    )
   } else {
-    if (fontFamily != "inherit") message("Google font not founded, check the spelling. Using inherit.")
+    if (fontFamily != "inherit") cli::cli_inform("Google font {.val {fontFamily}} not found, check the spelling. Using {.val inherit}.")
   }
   
   rst <- htmltools::HTML(result)
@@ -105,8 +117,7 @@ pikchr <- function(code,
 
 #' Google Font List
 #'
-#' List of fonts and its stytles on google fonts site.
-#' Report ...
+#' List of fonts and their styles on the Google Fonts site.
 #'
 #' @format ## `google_fonts`
 #' A data frame with 1,718 rows and 2 columns:
@@ -116,7 +127,3 @@ pikchr <- function(code,
 #' }
 #' @source <https://fonts.google.com>
 "google_fonts"
-
-
-## quiets concerns of R CMD check re: the .'s that appear in pipelines
-if(getRversion() >= "4.1.0")  utils::globalVariables(c("."))

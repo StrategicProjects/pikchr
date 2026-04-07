@@ -7,39 +7,53 @@
 eng_pikchr(options)
 }
 \arguments{
-\item{options}{A list of chunk options from Knitr. It includes the Pikchr code and various parameters
-controlling the size, appearance, and output format of the rendered image.}
+\item{options}{A list of chunk options from knitr.}
 }
 \value{
-This function returns an SVG (or PNG for LaTeX output) rendered by Pikchr.
+Rendered output suitable for the target document format.
 }
 \description{
-This function serves as a custom code engine for Knitr to render Pikchr diagrams as SVG or PNG images.
-It processes Pikchr code embedded in R Markdown documents and outputs either HTML or LaTeX-compatible images.
+A custom knitr engine to render Pikchr diagrams as SVG (HTML output) or
+PNG (LaTeX, DOCX, and other non-HTML formats). Works with both RMarkdown
+and Quarto documents.
 }
 \details{
-The `eng_pikchr` function allows you to use Pikchr code inside R Markdown documents, rendering it as an image.
-It supports options like `width`, `height`, font `size`, font `family`, and CSS classes to customize the output.
-The function automatically detects the output format (HTML or LaTeX) and generates the appropriate image.
+The \code{eng_pikchr} function allows you to use Pikchr code inside
+R Markdown and Quarto documents, rendering it as an image. It supports
+options like \code{width}, \code{height}, \code{fontSize},
+\code{fontFamily}, and CSS classes to customize the output.
 
-If the output is LaTeX, the SVG is converted to PNG using the `rsvg_png()` function.
+The engine automatically detects the output format.
+For HTML-based outputs (html, revealjs, slidy, etc.) the SVG is embedded
+inline. For non-HTML outputs (LaTeX/PDF, DOCX, EPUB, Typst, etc.) the SVG
+is converted to PNG via \code{\link[rsvg]{rsvg_png}}.
 }
 \section{Chunk Options}{
 
-- `eval`: Whether to evaluate the Pikchr code (default `TRUE`).
-- `echo`: Whether to display the code in the output document (default `TRUE`).
-- `width`: Width of the rendered image (default `"80%"`).
-- `height`: Height of the rendered image (default `"auto"`).
-- `size`: Font size for the Pikchr diagram (default `"100%"`).
-- `family`: Font family for the Pikchr diagram (default `"inherit"`).
-- `align`: Figure align: left, right, center.
-- `css`: Additional CSS for customizing the Pikchr diagram.
-- `class`: CSS class to apply to the diagram (default `"pikchr"`).
-- `margin`: CSS margin around the image (default `"10px 0 10px 0"`).
-- `lang`: Language for the Pikchr diagram (optional).
+Standard knitr options:
+\describe{
+  \item{\code{eval}}{Whether to evaluate the Pikchr code (default \code{TRUE}).}
+  \item{\code{echo}}{Whether to display the code in the output (default \code{TRUE}).}
+  \item{\code{fig.cap}}{Figure caption (supported in both HTML and non-HTML output).}
+  \item{\code{fig.alt}}{Alternative text for accessibility (HTML only).}
+  \item{\code{fig.align}}{Figure alignment: \code{"left"}, \code{"right"}, \code{"center"}, or \code{"default"}.}
+  \item{\code{out.width}}{Output width for non-HTML formats (e.g., \code{"80\%"}).}
+  \item{\code{dpi}}{Resolution for PNG conversion in non-HTML output (default \code{150}).}
+}
+
+Pikchr-specific options:
+\describe{
+  \item{\code{width}}{CSS width of the SVG (default from viewBox, e.g., \code{"80\%"}).}
+  \item{\code{height}}{CSS height of the SVG (default \code{"auto"}).}
+  \item{\code{fontSize}}{Font size for the diagram (default \code{"100\%"}).}
+  \item{\code{fontFamily}}{Font family for the diagram (default \code{"Jost"}).}
+  \item{\code{class}}{CSS class for the SVG element (default \code{"pikchr"}).}
+  \item{\code{css}}{Additional inline CSS styles for the SVG.}
+  \item{\code{margin}}{CSS margin around the SVG (default \code{"10px 0 10px 0"}).}
+}
 }
 
 \seealso{
-[knitr::knit_engines]
+\code{\link{pikchr}}, \code{\link[knitr]{knit_engines}}
 }
 \keyword{internal}

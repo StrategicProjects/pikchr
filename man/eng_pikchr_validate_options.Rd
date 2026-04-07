@@ -7,17 +7,14 @@
 eng_pikchr_validate_options(options)
 }
 \arguments{
-\item{options}{A list of options passed to the Pikchr engine from a Knitr code chunk. These options include directives such as `eval`, `echo`, and `warning`.}
+\item{options}{A list of chunk options from knitr.}
 }
 \value{
-The validated options list, where unsupported numeric values are converted to `TRUE`.
+The validated options list.
 }
 \description{
-This function validates the chunk options provided to the Pikchr engine in Knitr. 
-It checks for unsupported numeric options and converts them to logical `TRUE` values.
-A warning is issued if any unsupported numeric options are detected.
-}
-\details{
-The `eng_pikchr_validate_options` function looks for specific options (e.g., `eval`, `echo`, `warning`) that should not be numeric. If any of these options are numeric, they are converted to logical `TRUE` and a warning is issued to the user.
+Validates chunk options provided to the Pikchr engine. Numeric values for
+logical options (`eval`, `echo`, `warning`) are converted to `TRUE` with a
+warning.
 }
 \keyword{internal}

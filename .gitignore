@@ -2,12 +2,9 @@ src/pikchr.so
 src/pikchr.o
 src/init.o
 .Rproj.user
-docs
 .DS_Store
 docs.zip
 README.html
 /doc/
 /Meta/
-.DS_Store
-.DS_Store
 .DS_Store
