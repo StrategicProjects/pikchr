@@ -15,7 +15,7 @@ R_OUT = 39.34155                 # outer circumradius (keeps original height)
 R1 = 31.4736                     # outer ring (light green) circumradius
 R2 = 23.605                      # inner ring (medium green) circumradius
 CR = 1.44                        # small circle radius / edge trim length
-PAD = 1.44                       # padding around the figure
+PAD = 5.76                       # padding around the figure (breathing room)
 
 # Center: top vertex sits PAD below the top edge; left vertex PAD from left edge.
 CX = R_OUT * S3 + PAD
