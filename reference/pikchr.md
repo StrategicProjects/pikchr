@@ -33,25 +33,26 @@ pikchr(
 
   A character string representing the width of the rendered SVG. It
   accepts standard HTML values such as percentages ("75%"), pixels
-  ("300px"), or "auto". Defaults to "75%".
+  ("300px"), or "auto". If NULL (default), the intrinsic width from the
+  SVG viewBox is used.
 
 - height:
 
   A character string representing the height of the rendered SVG. It
-  accepts standard HTML values such as pixels ("300px") or "auto".
-  Defaults to "auto".
+  accepts standard HTML values such as pixels ("300px") or "auto". If
+  NULL (default), the intrinsic height from the SVG viewBox is used.
 
 - fontSize:
 
   A character string specifying the font size of the text within the
   SVG. It accepts standard HTML values such as percentages ("80%"),
-  pixels, or keywords ("large"). Defaults to "80%".
+  pixels, or keywords ("large"). Defaults to "100%".
 
 - fontFamily:
 
   A character string specifying the font family for the text in the
   diagram. Common values include "inherit" (to use the page's default
-  font), "Arial", "Times New Roman", etc. Defaults to "inherit".
+  font), "Arial", "Times New Roman", etc. Defaults to "Jost".
 
 - class:
 
@@ -62,8 +63,8 @@ pikchr(
 - align:
 
   A character string specifying the alignment of the SVG within its
-  container. Options are "center" (default), "left", or "right". If set
-  to "none", no alignment is applied.
+  container. Options are "center", "left", or "right". Defaults to
+  "none", in which case no alignment wrapper is applied.
 
 - css:
 

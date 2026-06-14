@@ -29,11 +29,13 @@ You can install directly from CRAN or the development version of pikchr
 from [GitHub](https://github.com/) with:
 
 ``` r
+
 # install.packages("pak")
 pak::pak("StrategicProjects/pikchr")
 ```
 
 ``` r
+
 library(pikchr)
 
 pikchr('

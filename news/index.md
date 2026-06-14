@@ -1,6 +1,34 @@
 # Changelog
 
+## pikchr 1.1.1
+
+### Bug fixes
+
+- Fixed a memory leak in the C interface (`pikchr_c`): the SVG buffer
+  returned by
+  [`pikchr()`](https://strategicprojects.github.io/pikchr/reference/pikchr.md)
+  was never freed, leaking on every diagram render.
+- Guarded the C interface against a possible `NULL` return from
+  [`pikchr()`](https://strategicprojects.github.io/pikchr/reference/pikchr.md)
+  that could crash the R session.
+- Fixed the `height` argument default in
+  [`pikchr()`](https://strategicprojects.github.io/pikchr/reference/pikchr.md),
+  which never fell back to the SVG `viewBox` height and produced an
+  empty `height:` CSS rule.
+- Aligned the documented argument defaults of
+  [`pikchr()`](https://strategicprojects.github.io/pikchr/reference/pikchr.md)
+  (`width`, `height`, `fontSize`, `fontFamily`, `align`) with the actual
+  function defaults.
+
+### Other
+
+- Regenerated the package logo with a geometrically regular hexagon (the
+  previous SVG was horizontally squished) and fixed an invalid `<def>`
+  element (now `<defs>`) in the logo source.
+
 ## pikchr 1.1.0
+
+CRAN release: 2026-04-07
 
 ### New features
 
