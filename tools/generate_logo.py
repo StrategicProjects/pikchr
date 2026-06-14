@@ -53,10 +53,14 @@ COL_R1 = "rgb(125,206,160)"
 COL_R2 = "rgb(82,190,128)"
 
 parts = []
+# Standalone logo SVG: explicit width/height + viewBox so it has a defined
+# intrinsic size and renders identically everywhere (no width:100%/height:auto
+# artifact from the pikchr() HTML wrapper, which could clip the bottom).
 parts.append(
-    "<svg style='width:100%;height:auto;font-size:80%;font-family:MonteCarlo;"
-    "margin:10px 0 10px 0;' xmlns='http://www.w3.org/2000/svg' class=\"pikchr\" "
-    f"viewBox=\"0 0 {f(VB_W)} {f(VB_H)}\">"
+    "<svg xmlns='http://www.w3.org/2000/svg' class=\"pikchr\" "
+    f"width=\"{f(VB_W)}\" height=\"{f(VB_H)}\" "
+    f"viewBox=\"0 0 {f(VB_W)} {f(VB_H)}\" "
+    "font-family=\"MonteCarlo\">"
     "<defs><style type=\"text/css\">"
     "@import url(https://fonts.googleapis.com/css2?family=MonteCarlo:wght@400);"
     "</style></defs>"
