@@ -25,7 +25,7 @@
 #'   box same "Pikchr" "(pikchr.c)" fit
 #'   ')
 #'   }
-#' @useDynLib pikchr 
+#' @useDynLib pikchr, pikchr_c
 #' @import htmltools
 #' @import utils
 #' @import stringr
@@ -47,7 +47,7 @@ pikchr <- function(code,
 
   code_clean <- stringr::str_replace_all(code, "\\\\*\\s*\\n\\s*then", " then")
   
-  result <- .Call("pikchr_c", code_clean, class)
+  result <- .Call(pikchr_c, code_clean, class)
   
   
   if (is.null(margin)) {
