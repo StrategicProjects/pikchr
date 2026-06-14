@@ -4,12 +4,12 @@
 #' Pikchr is a diagram language inspired by PIC, and this function allows you to easily embed Pikchr diagrams as SVG images in your HTML or Markdown documents.
 #'
 #' @param code A character string containing the diagram code written in the Pikchr language.
-#' @param width A character string representing the width of the rendered SVG. It accepts standard HTML values such as percentages ("75\%"), pixels ("300px"), or "auto". Defaults to "75\%".
-#' @param height A character string representing the height of the rendered SVG. It accepts standard HTML values such as pixels ("300px") or "auto". Defaults to "auto".
-#' @param fontSize A character string specifying the font size of the text within the SVG. It accepts standard HTML values such as percentages ("80\%"), pixels, or keywords ("large"). Defaults to "80\%".
-#' @param fontFamily A character string specifying the font family for the text in the diagram. Common values include "inherit" (to use the page's default font), "Arial", "Times New Roman", etc. Defaults to "inherit".
+#' @param width A character string representing the width of the rendered SVG. It accepts standard HTML values such as percentages ("75\%"), pixels ("300px"), or "auto". If NULL (default), the intrinsic width from the SVG viewBox is used.
+#' @param height A character string representing the height of the rendered SVG. It accepts standard HTML values such as pixels ("300px") or "auto". If NULL (default), the intrinsic height from the SVG viewBox is used.
+#' @param fontSize A character string specifying the font size of the text within the SVG. It accepts standard HTML values such as percentages ("80\%"), pixels, or keywords ("large"). Defaults to "100\%".
+#' @param fontFamily A character string specifying the font family for the text in the diagram. Common values include "inherit" (to use the page's default font), "Arial", "Times New Roman", etc. Defaults to "Jost".
 #' @param class A character string specifying a CSS class to apply to the SVG. This can be used to style the SVG with external CSS rules. Defaults to "pikchr".
-#' @param align A character string specifying the alignment of the SVG within its container. Options are "center" (default), "left", or "right". If set to "none", no alignment is applied.
+#' @param align A character string specifying the alignment of the SVG within its container. Options are "center", "left", or "right". Defaults to "none", in which case no alignment wrapper is applied.
 #' @param css A character string containing extra CSS styles to apply directly to the SVG element. This allows additional customization beyond width, height, and font settings. If NULL, no extra styles are applied.
 #' @param margin A character string specifying the margin around the SVG element, formatted like a CSS margin rule (e.g., "10px 0 10px 0"). Defaults to "10px 0 10px 0".
 #' @param svgOnly Logical, whether to return only the raw SVG code (TRUE) or open the diagram in the Viewer window (FALSE, default).
@@ -61,7 +61,7 @@ pikchr <- function(code,
   bbox_width <-  bbox[3] - bbox[1]
   
   if (is.null(width)) width <- bbox_width
-  if (is.null(width)) width <- bbox_height
+  if (is.null(height)) height <- bbox_height
 
   styles  = paste0("style='width:", width,
                    ";height:", height,

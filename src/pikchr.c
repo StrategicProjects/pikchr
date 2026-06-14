@@ -8281,13 +8281,16 @@ return exitCode ? EXIT_FAILURE : EXIT_SUCCESS;
 
 
 SEXP pikchr_c (SEXP code, SEXP class) {
-  const char *pcode = STRING_VALUE(code);
-  const char *pclass = STRING_VALUE(class);
-  char *zOut;
-  zOut = pikchr(pcode, pclass, 0, NULL, NULL);
-  SEXP result;
-  PROTECT(result = NEW_CHARACTER(1));
-  SET_STRING_ELT(result, 0, mkChar(zOut));
+  const char *pcode = CHAR(STRING_ELT(code, 0));
+  const char *pclass = CHAR(STRING_ELT(class, 0));
+  char *zOut = pikchr(pcode, pclass, 0, NULL, NULL);
+  SEXP result = PROTECT(allocVector(STRSXP, 1));
+  if( zOut ){
+    SET_STRING_ELT(result, 0, mkChar(zOut));
+    free(zOut);                 /* pikchr() returns malloc'd memory */
+  } else {
+    SET_STRING_ELT(result, 0, NA_STRING);
+  }
   UNPROTECT(1);
   return(result);
 }
