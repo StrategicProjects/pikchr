@@ -20,17 +20,17 @@ pikchr(
 \arguments{
 \item{code}{A character string containing the diagram code written in the Pikchr language.}
 
-\item{width}{A character string representing the width of the rendered SVG. It accepts standard HTML values such as percentages ("75\%"), pixels ("300px"), or "auto". Defaults to "75\%".}
+\item{width}{A character string representing the width of the rendered SVG. It accepts standard HTML values such as percentages ("75\%"), pixels ("300px"), or "auto". If NULL (default), the intrinsic width from the SVG viewBox is used.}
 
-\item{height}{A character string representing the height of the rendered SVG. It accepts standard HTML values such as pixels ("300px") or "auto". Defaults to "auto".}
+\item{height}{A character string representing the height of the rendered SVG. It accepts standard HTML values such as pixels ("300px") or "auto". If NULL (default), the intrinsic height from the SVG viewBox is used.}
 
-\item{fontSize}{A character string specifying the font size of the text within the SVG. It accepts standard HTML values such as percentages ("80\%"), pixels, or keywords ("large"). Defaults to "80\%".}
+\item{fontSize}{A character string specifying the font size of the text within the SVG. It accepts standard HTML values such as percentages ("80\%"), pixels, or keywords ("large"). Defaults to "100\%".}
 
-\item{fontFamily}{A character string specifying the font family for the text in the diagram. Common values include "inherit" (to use the page's default font), "Arial", "Times New Roman", etc. Defaults to "inherit".}
+\item{fontFamily}{A character string specifying the font family for the text in the diagram. Common values include "inherit" (to use the page's default font), "Arial", "Times New Roman", etc. Defaults to "Jost".}
 
 \item{class}{A character string specifying a CSS class to apply to the SVG. This can be used to style the SVG with external CSS rules. Defaults to "pikchr".}
 
-\item{align}{A character string specifying the alignment of the SVG within its container. Options are "center" (default), "left", or "right". If set to "none", no alignment is applied.}
+\item{align}{A character string specifying the alignment of the SVG within its container. Options are "center", "left", or "right". Defaults to "none", in which case no alignment wrapper is applied.}
 
 \item{css}{A character string containing extra CSS styles to apply directly to the SVG element. This allows additional customization beyond width, height, and font settings. If NULL, no extra styles are applied.}
 
