@@ -2,6 +2,8 @@
 
 ## pikchr 1.1.1
 
+CRAN release: 2026-06-14
+
 ### Bug fixes
 
 - Fixed a memory leak in the C interface (`pikchr_c`): the SVG buffer
