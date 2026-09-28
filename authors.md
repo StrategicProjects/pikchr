@@ -4,13 +4,16 @@
 
 - **Andre Leite**. Author, maintainer.
 
-- **Hugo Vaconcelos**. Author.
+- **Hugo Vasconcelos**. Author.
 
 - **Diogo Bezerra**. Author.
 
-- **Marcos Wasilew**. Author.
+- **Marcos Wasiliew**. Author. [](https://orcid.org/0009-0004-4694-3159)
 
 - **Carlos Amorim**. Author.
+
+- **Júlia Nascimento Barreto**. Author.
+  [](https://orcid.org/0009-0004-2851-7770)
 
 - **Richard Hipp**. Contributor.
 
@@ -21,13 +24,14 @@
 Source:
 [`DESCRIPTION`](https://github.com/StrategicProjects/pikchr/blob/main/DESCRIPTION)
 
-Leite A, Vaconcelos H, Bezerra D, Wasilew M, Amorim C (2026). *pikchr: R
-Wrapper for 'pikchr' (PIC) Diagram Language*. R package version 1.1.1,
+Leite A, Vasconcelos H, Bezerra D, Wasiliew M, Amorim C, Nascimento
+Barreto J (2026). *pikchr: R Wrapper for 'pikchr' (PIC) Diagram
+Language*. R package version 1.1.1,
 <https://strategicprojects.github.io/pikchr/>.
 
     @Manual{,
       title = {pikchr: R Wrapper for 'pikchr' (PIC) Diagram Language},
-      author = {Andre Leite and Hugo Vaconcelos and Diogo Bezerra and Marcos Wasilew and Carlos Amorim},
+      author = {Andre Leite and Hugo Vasconcelos and Diogo Bezerra and Marcos Wasiliew and Carlos Amorim and Júlia {Nascimento Barreto}},
       year = {2026},
       note = {R package version 1.1.1},
       url = {https://strategicprojects.github.io/pikchr/},
