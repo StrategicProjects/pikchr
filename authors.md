@@ -2,7 +2,7 @@
 
 ## Authors
 
-- **Andre Leite**. Author, maintainer.
+- **André Leite**. Author, maintainer.
 
 - **Hugo Vasconcelos**. Author.
 
@@ -31,7 +31,7 @@ Language*. R package version 1.1.1,
 
     @Manual{,
       title = {pikchr: R Wrapper for 'pikchr' (PIC) Diagram Language},
-      author = {Andre Leite and Hugo Vasconcelos and Diogo Bezerra and Marcos Wasiliew and Carlos Amorim and Júlia {Nascimento Barreto}},
+      author = {André Leite and Hugo Vasconcelos and Diogo Bezerra and Marcos Wasiliew and Carlos Amorim and Júlia {Nascimento Barreto}},
       year = {2026},
       note = {R package version 1.1.1},
       url = {https://strategicprojects.github.io/pikchr/},
