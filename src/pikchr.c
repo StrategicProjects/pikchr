@@ -39,13 +39,13 @@
  */
 /************ Begin %include sections from the grammar ************************/
 #line 1 "VERSION.h"
-#define MANIFEST_UUID "2f0308002944f5335b9760eefc83a67a658c802ae7f458ab3b4056f47ad9da0d"
-#define MANIFEST_VERSION "[2f03080029]"
-#define MANIFEST_DATE "2025-03-21 21:55:05"
-#define MANIFEST_YEAR "2025"
-#define MANIFEST_ISODATE "20250321215505"
-#define MANIFEST_NUMERIC_DATE 20250321
-#define MANIFEST_NUMERIC_TIME 215505
+#define MANIFEST_UUID "a7f1c35bc0448daf15e2bafa36e510c1517534e620c452ecb314ed57d974f081"
+#define MANIFEST_VERSION "[a7f1c35bc0]"
+#define MANIFEST_DATE "2026-04-03 10:29:56"
+#define MANIFEST_YEAR "2026"
+#define MANIFEST_ISODATE "20260403102956"
+#define MANIFEST_NUMERIC_DATE 20260403
+#define MANIFEST_NUMERIC_TIME 102956
 #define RELEASE_VERSION "1.0"
 #define RELEASE_VERSION_NUMBER 10000
 #define RELEASE_RESOURCE_VERSION 1,0,0,0
@@ -7892,13 +7892,21 @@ PToken *pOuter     /* Arguments of the next outer context, or NULL */
   }
   if( z[i]==')' ){
     args[nArg].n = i - iStart;
-    /* Remove leading and trailing whitespace from each argument.
-     ** If what remains is one of $1, $2, ... $9 then transfer the
-     ** corresponding argument from the outer context */
+    /* Remove leading and trailing whitespace from each argument (including
+     ** backslash-escaped newlines).  If what remains is one of $1, $2, ... $9
+     ** then transfer the corresponding argument from the outer context */
     for(j=0; j<=nArg; j++){
       PToken *t = &args[j];
-      while( t->n>0 && IsSpace(t->z[0]) ){ t->n--; t->z++; }
-      while( t->n>0 && IsSpace(t->z[t->n-1]) ){ t->n--; }
+      while( (t->n>0 && IsSpace(t->z[0]))
+          || (t->n>1 && t->z[0]=='\\' && IsSpace(t->z[1]))
+      ){
+        t->z++;
+        t->n--;
+      }
+      while( t->n>0 && IsSpace(t->z[t->n-1]) ){
+        t->n--;
+        if( t->n>0 && t->z[t->n-1]=='\\' ) t->n--;
+      }
       if( t->n==2 && t->z[0]=='$' && t->z[1]>='1' && t->z[1]<='9' ){
         if( pOuter ) *t = pOuter[t->z[1]-'1'];
         else t->n = 0;
@@ -8295,4 +8303,4 @@ SEXP pikchr_c (SEXP code, SEXP class) {
   return(result);
 }
 
-#line 8272 "pikchr.c"
+#line 8280 "pikchr.c"
