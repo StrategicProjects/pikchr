@@ -1,5 +1,18 @@
 # Changelog
 
+## pikchr 1.1.2
+
+### Bug fixes
+
+- Updated the bundled ‘pikchr’ C source to upstream check-in
+  `a7f1c35bc0` (2026-04-03). It fixes nested macro calls whose
+  pass-through arguments (`$1`, `$2`, …) are split across lines with a
+  trailing backslash, which previously failed with a syntax error
+  (upstream forum post `c1d9a4c125a6a5bf`). This is the only code change
+  upstream since the previous import (`2f03080029`, 2025-03-21); the
+  `data-pikchr-date` attribute of generated SVGs is now
+  `20260403102956`.
+
 ## pikchr 1.1.1
 
 CRAN release: 2026-06-14

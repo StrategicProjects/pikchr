@@ -28,13 +28,13 @@ Source:
 
 Leite A, Vasconcelos H, Bezerra D, Wasiliew M, Amorim C, Nascimento
 Barreto J (2026). *pikchr: R Wrapper for 'pikchr' (PIC) Diagram
-Language*. R package version 1.1.1,
+Language*. R package version 1.1.2,
 <https://strategicprojects.github.io/pikchr/>.
 
     @Manual{,
       title = {pikchr: R Wrapper for 'pikchr' (PIC) Diagram Language},
       author = {André Leite and Hugo Vasconcelos and Diogo Bezerra and Marcos Wasiliew and Carlos Amorim and Júlia {Nascimento Barreto}},
       year = {2026},
-      note = {R package version 1.1.1},
+      note = {R package version 1.1.2},
       url = {https://strategicprojects.github.io/pikchr/},
     }
