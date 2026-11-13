@@ -16,9 +16,13 @@ Authors@R: c(
                    comment = c(ORCID = "0000-0001-6315-8305")),
             person("Júlia", "Nascimento Barreto", email = "juliabarreto@gd.seplag.pe.gov.br", role = "aut",
                    comment = c(ORCID = "0009-0004-2851-7770")),
-            person("Richard", "Hipp", email = "drh@sqlite.org", role = "ctb"),
+            person("Richard", "Hipp", email = "drh@sqlite.org", role = c("ctb", "cph"),
+                   comment = "Author of the bundled pikchr.c"),
             person("Brian", "Kernighan", role = "ctb"))
-Description: An 'R' interface to 'pikchr' (<https://pikchr.org>, pronounced "picture"), a 'PIC'-like markup language for creating diagrams within technical documentation. Originally developed by Brian Kernighan, 'PIC' has been adapted into 'pikchr' by D. Richard Hipp, the creator of 'SQLite'. 'pikchr' is designed to be embedded in fenced code blocks of Markdown or other documentation markup languages, making it ideal for generating diagrams in text-based formats. This package allows R users to seamlessly integrate the descriptive syntax of 'pikchr' for diagram creation directly within the 'R' environment.
+Description: An 'R' interface to 'pikchr' (<https://pikchr.org>, pronounced "picture"), a 'PIC'-like markup language for creating diagrams within technical documentation. Originally developed by Brian Kernighan, 'PIC' has been adapted into 'pikchr' by D. Richard Hipp, the creator of 'SQLite'. 'pikchr' is designed to be embedded in fenced code blocks of Markdown or other documentation markup languages, making it ideal for generating diagrams in text-based formats. This package allows R users to seamlessly integrate the descriptive syntax of 'pikchr' for diagram creation directly within the 'R' environment. It bundles the 'pikchr' C source by D. Richard Hipp and is an independent wrapper, not affiliated with or endorsed by the 'pikchr' or 'SQLite' projects.
+Copyright: The bundled 'pikchr' C source (src/pikchr.c) is copyright (C)
+    2020 D. Richard Hipp and distributed under the Zero-Clause BSD license;
+    its notice is reproduced in inst/COPYRIGHTS.
 License: GPL (>= 2)
 Encoding: UTF-8
 VignetteBuilder: knitr

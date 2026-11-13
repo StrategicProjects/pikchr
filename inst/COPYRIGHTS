@@ -1,0 +1,47 @@
+The pikchr R package wraps Pikchr
+=================================
+
+The pikchr R package is an R interface to Pikchr (https://pikchr.org), the
+PIC-like diagram language created by D. Richard Hipp, the author of SQLite.
+The language, its parser and its SVG renderer are his work. Pikchr is modelled
+on PIC, the picture language created by Brian W. Kernighan.
+
+The R package is an independent wrapper. It is not affiliated with, maintained
+by or endorsed by the Pikchr or SQLite projects or their author.
+
+-------------------------------------------------------------------------------
+Pikchr (bundled as src/pikchr.c)
+-------------------------------------------------------------------------------
+
+src/pikchr.c is the pikchr.c file distributed by the Pikchr project (generated
+there by the Lemon parser generator from pikchr.y), with small changes for use
+from R: an R entry point, R's error and print routines in place of exit() and
+fprintf(stderr, ...). The upstream check-in is recorded in the MANIFEST_*
+macros at the top of the file.
+
+Pikchr is distributed under the Zero-Clause BSD license (0BSD). Its notice, as
+it appears in src/pikchr.c, is:
+
+  Zero-Clause BSD license:
+
+  Copyright (C) 2020-09-01 by D. Richard Hipp <drh@sqlite.org>
+
+  Permission to use, copy, modify, and/or distribute this software for
+  any purpose with or without fee is hereby granted.
+
+The parser driver at the top of src/pikchr.c comes from the template of the
+Lemon parser generator (part of SQLite), whose author disclaims copyright to
+it (public domain); that statement is kept in the file.
+
+-------------------------------------------------------------------------------
+R package
+-------------------------------------------------------------------------------
+
+The R code, the R entry point and src/init.c, and the package's own
+documentation are copyright (c) the pikchr (R package) authors and released
+under the GNU General Public License, version 2 or later.
+
+The "User Manual" vignette reproduces the text of the Pikchr user manual by
+D. Richard Hipp (https://pikchr.org/home/doc/trunk/doc/userman.md), and some
+diagrams in the "Examples" vignette derive from examples published at
+pikchr.org and fossil-scm.org, as noted in those vignettes.
