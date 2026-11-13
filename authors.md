@@ -17,7 +17,8 @@
 - **Júlia Nascimento Barreto**. Author.
   [](https://orcid.org/0009-0004-2851-7770)
 
-- **Richard Hipp**. Contributor.
+- **Richard Hipp**. Contributor, copyright holder.  
+  Author of the bundled pikchr.c
 
 - **Brian Kernighan**. Contributor.
 

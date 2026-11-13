@@ -37,7 +37,14 @@
     </div>
 
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="1.1.2" id="pikchr-112">pikchr 1.1.2<a class="anchor" aria-label="anchor" href="#pikchr-112"></a></h2>
+<h2 class="pkg-version" data-toc-text="development version" id="pikchr-development-version">pikchr (development version)<a class="anchor" aria-label="anchor" href="#pikchr-development-version"></a></h2>
+<div class="section level3">
+<h3 id="credit-development-version">Credit<a class="anchor" aria-label="anchor" href="#credit-development-version"></a></h3>
+<ul><li>The package wraps <a href="https://pikchr.org" class="external-link">Pikchr</a> by D. Richard Hipp and bundles his <code>pikchr.c</code>. He is now listed as copyright holder (<code>cph</code>) in <code>Authors@R</code>; the Zero-Clause BSD notice of <code>pikchr.c</code> ships in <code>inst/COPYRIGHTS</code> and is referenced by a new <code>Copyright</code> field; and the description, README and website name the author and the license and state that the package is an independent wrapper, not affiliated with or endorsed by the Pikchr or SQLite projects.</li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.1.2" id="pikchr-112">pikchr 1.1.2<a class="anchor" aria-label="anchor" href="#pikchr-112"></a></h2><p class="text-muted">CRAN release: 2026-10-29</p>
 <div class="section level3">
 <h3 id="bug-fixes-1-1-2">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-1-1-2"></a></h3>
 <ul><li>Updated the bundled ‘pikchr’ C source to upstream check-in <code>a7f1c35bc0</code> (2026-04-03). It fixes nested macro calls whose pass-through arguments (<code>$1</code>, <code>$2</code>, …) are split across lines with a trailing backslash, which previously failed with a syntax error (upstream forum post <code>c1d9a4c125a6a5bf</code>). This is the only code change upstream since the previous import (<code>2f03080029</code>, 2025-03-21); the <code>data-pikchr-date</code> attribute of generated SVGs is now <code>20260403102956</code>.</li>
@@ -111,7 +118,7 @@
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by André Leite, Hugo Vasconcelos, Diogo Bezerra, Marcos Wasiliew, Carlos Amorim, Júlia Nascimento Barreto.</p>
+  <p>Developed by André Leite, Hugo Vasconcelos, Diogo Bezerra, Marcos Wasiliew, Carlos Amorim, Júlia Nascimento Barreto. An R wrapper for <a href="https://pikchr.org" class="external-link">Pikchr</a> by D. Richard Hipp, whose <code>pikchr.c</code> (0BSD) is bundled; an independent project, not affiliated with or endorsed by the Pikchr or SQLite projects.</p>
 </div>
 
 <div class="pkgdown-footer-right">

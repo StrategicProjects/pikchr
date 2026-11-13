@@ -5,10 +5,22 @@
   ![Devel
 Badge](https://img.shields.io/badge/devel%20version-1.1.0-blue.svg)
 
-Welcome to the `pikchr` package website, an R interface for the **PIC
-diagramming language**, powered by the parser from <https://pikchr.org>.
-The `pikchr` package allows you to create diagrams directly within R,
-combining simplicity and precision for efficient diagram generation.
+Welcome to the `pikchr` package website, an R wrapper for
+**[Pikchr](https://pikchr.org)**, the PIC-like diagramming language
+created by D. Richard Hipp (the author of SQLite), itself modelled on
+Brian Kernighan’s PIC. The language, the parser and the SVG renderer are
+Hipp’s work: this package bundles his `pikchr.c` (Zero-Clause BSD
+license, 0BSD; notice in
+[`inst/COPYRIGHTS`](https://strategicprojects.github.io/pikchr/inst/COPYRIGHTS))
+and makes it callable from R. The `pikchr` package allows you to create
+diagrams directly within R, combining simplicity and precision for
+efficient diagram generation.
+
+> pikchr (the R package) is an independent wrapper: it is not affiliated
+> with, maintained by or endorsed by the Pikchr or SQLite projects.
+> Please report problems with the R package
+> [here](https://github.com/StrategicProjects/pikchr/issues), not
+> upstream.
 
 With `pikchr`, you can produce complex diagrams for documentation,
 presentations, articles, and more, all from your R environment. The

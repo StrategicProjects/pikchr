@@ -1,6 +1,20 @@
 # Changelog
 
+## pikchr (development version)
+
+### Credit
+
+- The package wraps [Pikchr](https://pikchr.org) by D. Richard Hipp and
+  bundles his `pikchr.c`. He is now listed as copyright holder (`cph`)
+  in `Authors@R`; the Zero-Clause BSD notice of `pikchr.c` ships in
+  `inst/COPYRIGHTS` and is referenced by a new `Copyright` field; and
+  the description, README and website name the author and the license
+  and state that the package is an independent wrapper, not affiliated
+  with or endorsed by the Pikchr or SQLite projects.
+
 ## pikchr 1.1.2
+
+CRAN release: 2026-10-29
 
 ### Bug fixes
 
