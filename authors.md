@@ -20,7 +20,8 @@
 - **Richard Hipp**. Contributor, copyright holder.  
   Author of the bundled pikchr.c
 
-- **Brian Kernighan**. Contributor.
+- **Brian Kernighan**. Contributor.  
+  Creator of the PIC language, on which pikchr is based
 
 ## Citation
 
